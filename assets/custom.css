@@ -1,0 +1,60 @@
+body {
+    padding-right: 0 !important;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.dt-custom-buttons {
+    text-align: right;
+}
+
+.dt-custom-pagination {
+    text-align: right;
+}
+
+.dt-custom-length {
+    text-align: left;
+}
+
+.table-search-bar {
+    display: table-header-group;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.3rem rgba(0, 123, 255, 0.25);
+}
+
+.ui-menu-item a.ui-state-focus {
+background: #faa;
+}
+
+.container-page-title {
+    display: flex;
+}
+
+.page-title-contents {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title-text {
+    display: block;
+}
+
+.page-title-version {
+    display: block;
+    text-align: right;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 5px;
+    padding-left: 10px;
+}
+
+.card .table td,
+.card .table th {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}

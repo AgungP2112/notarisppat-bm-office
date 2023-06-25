@@ -1,0 +1,33 @@
+{
+    "favorites.resources": [
+        {
+            "filePath": "application\\modules\\template\\views\\js.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "application\\modules\\template\\views\\sidebar.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "application\\config\\routes.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "application\\modules\\template\\views\\header.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "application\\modules\\template\\views\\topbar.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "application\\modules\\pengaturan_jabatan\\views\\table_form.php",
+            "group": "Default"
+        },
+        {
+            "filePath": "assets\\custom.css",
+            "group": "Default"
+        }
+    ],
+    "favorites.sortOrder": "ASC"
+}
