@@ -29,10 +29,10 @@ class Template extends MY_Controller
         $this->load->view('template/error_403_no_access', $data);
     }
 
-    function php_check_hak_akses()
+    function check_hak_akses()
     {
         $this->load->model('ext_model');
-        $result = $this->ext_model->php_check_hak_akses($this->input->post('hak_akses'));
+        $result = $this->ext_model->check_hak_akses($this->input->post('hak_akses'));
         echo json_encode($result);
     }
 

@@ -44,10 +44,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
         });
     };
 
-    function jsCheckHakAkses(hakAkses) {
+    function checkHakAkses(hakAkses) {
         var result = false;
         $.ajax({
-            url: '<?= base_url('template/php_check_hak_akses') ?>',
+            url: '<?= base_url('template/check_hak_akses') ?>',
             type: "POST",
             dataType: "json",
             async: false,
@@ -131,43 +131,43 @@ defined('BASEPATH') or exit('No direct script access allowed');
 } ?>
 
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == '') {
-    if (php_check_hak_akses('pengaturan_user__data') == 'true') {
+    if (check_hak_akses('pengaturan_user__data') == 'true') {
         $this->load->view('pengaturan_user/main_js');
     }
 } ?>
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == 'add') {
-    if (php_check_hak_akses('pengaturan_user__add') == 'true') {
+    if (check_hak_akses('pengaturan_user__add') == 'true') {
         $this->load->view('pengaturan_user/add_js');
     }
 } ?>
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == 'edit') {
-    if (php_check_hak_akses('pengaturan_user__edit') == 'true') {
+    if (check_hak_akses('pengaturan_user__edit') == 'true') {
         $this->load->view('pengaturan_user/edit_js');
     }
 } ?>
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == 'recycle_bin') {
-    if (php_check_hak_akses('pengaturan_user__recycle_bin') == 'true') {
+    if (check_hak_akses('pengaturan_user__recycle_bin') == 'true') {
         $this->load->view('pengaturan_user/recycle_bin_js');
     }
 } ?>
 
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'jabatan' && $this->uri->segment(3) == '') {
-    if (php_check_hak_akses('pengaturan_jabatan__data') == 'true') {
+    if (check_hak_akses('pengaturan_jabatan__data') == 'true') {
         $this->load->view('pengaturan_jabatan/main_js');
     }
 } ?>
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'jabatan' && $this->uri->segment(3) == 'add') {
-    if (php_check_hak_akses('pengaturan_jabatan__add') == 'true') {
+    if (check_hak_akses('pengaturan_jabatan__add') == 'true') {
         $this->load->view('pengaturan_jabatan/add_js');
     }
 } ?>
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'jabatan' && $this->uri->segment(3) == 'edit') {
-    if (php_check_hak_akses('pengaturan_jabatan__edit') == 'true') {
+    if (check_hak_akses('pengaturan_jabatan__edit') == 'true') {
         $this->load->view('pengaturan_jabatan/edit_js');
     }
 } ?>
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'jabatan' && $this->uri->segment(3) == 'recycle_bin') {
-    if (php_check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true') {
+    if (check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true') {
         $this->load->view('pengaturan_jabatan/recycle_bin_js');
     }
 } ?>

@@ -9,7 +9,7 @@ class Pengaturan_log_aktivitas extends MY_Controller
         check_not_login();
         $this->load->model('pengaturan_log_aktivitas_m');
         if (
-            php_check_hak_akses('pengaturan_log_aktivitas') == 'false'
+            check_hak_akses('pengaturan_log_aktivitas') == 'false'
         ) {
             add_log('<div>Gagal membuka menu <i>Pengaturan - Log Aktivitas</i> karena terhalang hak akses</div>');
             redirect(base_url() . 'error_403');

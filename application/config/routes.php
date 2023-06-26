@@ -66,7 +66,7 @@ $route['profil/process/settings/user'] = 'profil/process_settings_user';
 $route['profil/load/main/data']        = 'profil/load_main_data';
 
 // Template
-$route['template/php_check_hak_akses'] = 'template/php_check_hak_akses';
+$route['template/check_hak_akses'] = 'template/check_hak_akses';
 $route['template/forbidden']           = 'template/forbidden';
 $route['template/add_log']             = 'template/add_log_client';
 $route['template/call_pusher']         = 'template/call_pusher';

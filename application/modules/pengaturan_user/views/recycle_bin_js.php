@@ -1,4 +1,4 @@
-<?php if (php_check_hak_akses('pengaturan_user__recycle_bin') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__recycle_bin') == 'true') { ?>
     <script>
         $(document).ready(function() {
             loadTableMaster();
@@ -138,10 +138,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__restore') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__restore') == 'true') { ?>
     <script>
         function restoreForm(id) {
-            if (jsCheckHakAkses('pengaturan_user__restore') == 'true') {
+            if (checkHakAkses('pengaturan_user__restore') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dipulihkan',
@@ -195,10 +195,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__restore_batch') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__restore_batch') == 'true') { ?>
     <script>
         function processRestoreBatch() {
-            if (jsCheckHakAkses('pengaturan_user__restore_batch') == 'true') {
+            if (checkHakAkses('pengaturan_user__restore_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -266,10 +266,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__destroy') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__destroy') == 'true') { ?>
     <script>
         function destroyForm(id) {
-            if (jsCheckHakAkses('pengaturan_user__destroy') == 'true') {
+            if (checkHakAkses('pengaturan_user__destroy') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dihancurkan',
@@ -323,10 +323,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__destroy_batch') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__destroy_batch') == 'true') { ?>
     <script>
         function processDestroyBatch() {
-            if (jsCheckHakAkses('pengaturan_user__destroy_batch') == 'true') {
+            if (checkHakAkses('pengaturan_user__destroy_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];

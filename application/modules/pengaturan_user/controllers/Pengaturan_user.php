@@ -9,18 +9,18 @@ class Pengaturan_user extends MY_Controller
         check_not_login();
         $this->load->model('pengaturan_user_m');
         if (
-            php_check_hak_akses('pengaturan_user__data') == 'false' &&
-            php_check_hak_akses('pengaturan_user__add') == 'false' &&
-            php_check_hak_akses('pengaturan_user__edit') == 'false' &&
-            php_check_hak_akses('pengaturan_user__delete') == 'false' &&
-            php_check_hak_akses('pengaturan_user__delete_batch') == 'false' &&
-            php_check_hak_akses('pengaturan_user__switch_active') == 'false' &&
-            php_check_hak_akses('pengaturan_user__switch_active_batch') == 'false' &&
-            php_check_hak_akses('pengaturan_user__recycle_bin') == 'false' &&
-            php_check_hak_akses('pengaturan_user__restore') == 'false' &&
-            php_check_hak_akses('pengaturan_user__restore_batch') == 'false' &&
-            php_check_hak_akses('pengaturan_user__destroy') == 'false' &&
-            php_check_hak_akses('pengaturan_user__destroy_batch') == 'false'
+            check_hak_akses('pengaturan_user__data') == 'false' &&
+            check_hak_akses('pengaturan_user__add') == 'false' &&
+            check_hak_akses('pengaturan_user__edit') == 'false' &&
+            check_hak_akses('pengaturan_user__delete') == 'false' &&
+            check_hak_akses('pengaturan_user__delete_batch') == 'false' &&
+            check_hak_akses('pengaturan_user__switch_active') == 'false' &&
+            check_hak_akses('pengaturan_user__switch_active_batch') == 'false' &&
+            check_hak_akses('pengaturan_user__recycle_bin') == 'false' &&
+            check_hak_akses('pengaturan_user__restore') == 'false' &&
+            check_hak_akses('pengaturan_user__restore_batch') == 'false' &&
+            check_hak_akses('pengaturan_user__destroy') == 'false' &&
+            check_hak_akses('pengaturan_user__destroy_batch') == 'false'
         ) {
             add_log_forbidden('pengaturan_user__data');
             redirect(base_url() . 'error_403');
@@ -47,17 +47,17 @@ class Pengaturan_user extends MY_Controller
         foreach ($data as $row) {
             $subResult = [];
 
-            if (php_check_hak_akses('pengaturan_user__edit') == 'true') {
+            if (check_hak_akses('pengaturan_user__edit') == 'true') {
                 $commandEdit = '<button class="dropdown-item" onclick="editForm(' . $row->user_id . ')"><i class="fas fa-edit"></i> Edit</button>';
             } else {
                 $commandEdit = '';
             }
-            if (php_check_hak_akses('pengaturan_user__delete') == 'true') {
+            if (check_hak_akses('pengaturan_user__delete') == 'true') {
                 $commandHapus = '<button class="dropdown-item" onclick="deleteForm(' . $row->user_id . ')"><i class="fas fa-trash"></i> Hapus</button>';
             } else {
                 $commandHapus = '';
             }
-            if (php_check_hak_akses('pengaturan_user__switch_active') == 'true') {
+            if (check_hak_akses('pengaturan_user__switch_active') == 'true') {
                 $commandGsk = '<button class="dropdown-item" onclick="gantiStatusKeaktifanForm(' . $row->user_id . ')"><i class="fas fa-toggle-on"></i> Ganti Status Keaktifan</button>';
             } else {
                 $commandGsk = '';
@@ -197,7 +197,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_delete()
     {
-        if (php_check_hak_akses('pengaturan_user__delete') == 'true') {
+        if (check_hak_akses('pengaturan_user__delete') == 'true') {
             add_log_open_menu('pengaturan_user__delete');
             $process = $this->pengaturan_user_m->delete_form__process();
             $result['success']  = $process;
@@ -215,7 +215,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_delete_batch()
     {
-        if (php_check_hak_akses('pengaturan_user__delete_batch') == 'true') {
+        if (check_hak_akses('pengaturan_user__delete_batch') == 'true') {
             add_log_open_menu('pengaturan_user__delete_batch');
             $process = $this->pengaturan_user_m->delete_batch_form__process();
             $result['success']  = $process;
@@ -233,7 +233,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_ganti_status_keaktifan()
     {
-        if (php_check_hak_akses('pengaturan_user__switch_active') == 'true') {
+        if (check_hak_akses('pengaturan_user__switch_active') == 'true') {
             add_log_open_menu('pengaturan_user__switch_active');
             $process = $this->pengaturan_user_m->ganti_status_keaktifan__process();
             $result['success']  = $process;
@@ -251,7 +251,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_ganti_status_keaktifan_batch()
     {
-        if (php_check_hak_akses('pengaturan_user__switch_active_batch') == 'true') {
+        if (check_hak_akses('pengaturan_user__switch_active_batch') == 'true') {
             add_log_open_menu('pengaturan_user__switch_active_batch');
             $process = $this->pengaturan_user_m->ganti_status_keaktifan_batch__process();
             $result['success']      = $process;
@@ -282,12 +282,12 @@ class Pengaturan_user extends MY_Controller
         $no = $_POST["start"] + 1;
         foreach ($data as $row) {
             $subResult = [];
-            if (php_check_hak_akses('pengaturan_user__restore') == 'true') {
+            if (check_hak_akses('pengaturan_user__restore') == 'true') {
                 $commandRestore = '<button class="dropdown-item" onclick="restoreForm(' . $row->user_id . ')"><i class="fas fa-trash-restore"></i> Pulihkan</button>';
             } else {
                 $commandRestore = '';
             }
-            if (php_check_hak_akses('pengaturan_user__destroy') == 'true') {
+            if (check_hak_akses('pengaturan_user__destroy') == 'true') {
                 $commandDestroy = '<button class="dropdown-item" onclick="destroyForm(' . $row->user_id . ')"><i class="fas fa-dumpster-fire"></i> Hancurkan</button>';
             } else {
                 $commandDestroy = '';
@@ -337,7 +337,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_restore()
     {
-        if (php_check_hak_akses('pengaturan_user__restore') == 'true') {
+        if (check_hak_akses('pengaturan_user__restore') == 'true') {
             add_log_open_menu('pengaturan_user__restore');
             $process = $this->pengaturan_user_m->restore_form__process();
             $result['success']      = $process;
@@ -355,7 +355,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_restore_batch()
     {
-        if (php_check_hak_akses('pengaturan_user__restore_batch') == 'true') {
+        if (check_hak_akses('pengaturan_user__restore_batch') == 'true') {
             add_log_open_menu('pengaturan_user__restore_batch');
             $process = $this->pengaturan_user_m->restore_batch_form__process();
             $result['success']      = $process;
@@ -373,7 +373,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_destroy()
     {
-        if (php_check_hak_akses('pengaturan_user__destroy') == 'true') {
+        if (check_hak_akses('pengaturan_user__destroy') == 'true') {
             add_log_open_menu('pengaturan_user__destroy');
             $process = $this->pengaturan_user_m->destroy_form__process();
             $result['success']      = $process;
@@ -391,7 +391,7 @@ class Pengaturan_user extends MY_Controller
     // --------------------------------------------------------------------
     function process_destroy_batch()
     {
-        if (php_check_hak_akses('pengaturan_user__destroy_batch') == 'true') {
+        if (check_hak_akses('pengaturan_user__destroy_batch') == 'true') {
             add_log_open_menu('pengaturan_user__destroy_batch');
             $process = $this->pengaturan_user_m->destroy_batch_form__process();
             $result['success']      = $process;

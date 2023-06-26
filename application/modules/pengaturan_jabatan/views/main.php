@@ -8,9 +8,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary text-white">
             <h5 class="m-0 font-weight-bold">Master Data</h5>
             <?php if (
-                php_check_hak_akses('pengaturan_jabatan__add') == 'true' ||
-                php_check_hak_akses('pengaturan_jabatan__delete_batch') == 'true' ||
-                php_check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true'
+                check_hak_akses('pengaturan_jabatan__add') == 'true' ||
+                check_hak_akses('pengaturan_jabatan__delete_batch') == 'true' ||
+                check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true'
             ) { ?>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle btn btn-info btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,13 +18,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(17px, 19px, 0px);">
                         <div class="dropdown-header">MENU</div>
-                        <?php if (php_check_hak_akses('pengaturan_jabatan__add') == 'true') { ?>
+                        <?php if (check_hak_akses('pengaturan_jabatan__add') == 'true') { ?>
                             <?= form_menu_item('addForm()', '<i class="fas fa-circle-plus"></i>', 'Tambah'); ?>
                         <?php } ?>
-                        <?php if (php_check_hak_akses('pengaturan_jabatan__delete_batch') == 'true') { ?>
+                        <?php if (check_hak_akses('pengaturan_jabatan__delete_batch') == 'true') { ?>
                             <?= form_menu_item('processDeleteBatch()', '<i class="fas fa-trash-can"></i>', 'Hapus Batch'); ?>
                         <?php } ?>
-                        <?php if (php_check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true') { ?>
+                        <?php if (check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true') { ?>
                             <div class="dropdown-divider"></div>
                             <?= form_menu_item('binForm()', '<i class="fas fa-dumpster"></i>', 'Lihat Tong Sampah'); ?>
                         <?php } ?>

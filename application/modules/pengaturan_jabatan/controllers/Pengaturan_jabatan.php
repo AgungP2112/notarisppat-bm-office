@@ -9,16 +9,16 @@ class Pengaturan_jabatan extends MY_Controller
         check_not_login();
         $this->load->model('pengaturan_jabatan_m');
         if (
-            php_check_hak_akses('pengaturan_jabatan__data') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__add') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__edit') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__delete') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__delete_batch') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__recycle_bin') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__restore') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__restore_batch') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__destroy') == 'false' &&
-            php_check_hak_akses('pengaturan_jabatan__destroy_batch') == 'false'
+            check_hak_akses('pengaturan_jabatan__data') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__add') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__edit') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__delete') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__delete_batch') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__recycle_bin') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__restore') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__restore_batch') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__destroy') == 'false' &&
+            check_hak_akses('pengaturan_jabatan__destroy_batch') == 'false'
         ) {
             add_log_forbidden('pengaturan_jabatan__data');
             redirect(base_url() . 'error_403');
@@ -44,12 +44,12 @@ class Pengaturan_jabatan extends MY_Controller
         $no = $_POST["start"] + 1;
         foreach ($data as $row) {
             $subResult = [];
-            if (php_check_hak_akses('pengaturan_jabatan__edit') == 'true') {
+            if (check_hak_akses('pengaturan_jabatan__edit') == 'true') {
                 $commandEdit = '<button class="dropdown-item" onclick="editForm(' . $row->jabatan_id . ')"><i class="fas fa-edit"></i> Edit</button>';
             } else {
                 $commandEdit = '';
             }
-            if (php_check_hak_akses('pengaturan_jabatan__delete') == 'true') {
+            if (check_hak_akses('pengaturan_jabatan__delete') == 'true') {
                 $commandHapus = '<button class="dropdown-item" onclick="deleteForm(' . $row->jabatan_id . ')"><i class="fas fa-trash"></i> Hapus</button>';
             } else {
                 $commandHapus = '';
@@ -153,7 +153,7 @@ class Pengaturan_jabatan extends MY_Controller
     // --------------------------------------------------------------------
     function process_delete()
     {
-        if (php_check_hak_akses('pengaturan_jabatan__delete') == 'true') {
+        if (check_hak_akses('pengaturan_jabatan__delete') == 'true') {
             add_log_open_menu('pengaturan_jabatan__delete');
             $process = $this->pengaturan_jabatan_m->delete_form__process();
             $result['success']  = $process;
@@ -171,7 +171,7 @@ class Pengaturan_jabatan extends MY_Controller
     // --------------------------------------------------------------------
     function process_delete_batch()
     {
-        if (php_check_hak_akses('pengaturan_jabatan__delete_batch') == 'true') {
+        if (check_hak_akses('pengaturan_jabatan__delete_batch') == 'true') {
             add_log_open_menu('pengaturan_jabatan__delete_batch');
             $process = $this->pengaturan_jabatan_m->delete_batch_form__process();
             $result['success']  = $process;
@@ -202,12 +202,12 @@ class Pengaturan_jabatan extends MY_Controller
         $no = $_POST["start"] + 1;
         foreach ($data as $row) {
             $subResult = [];
-            if (php_check_hak_akses('pengaturan_user__restore') == 'true') {
+            if (check_hak_akses('pengaturan_user__restore') == 'true') {
                 $commandRestore = '<button class="dropdown-item" onclick="restoreForm(' . $row->jabatan_id . ')"><i class="fas fa-trash-restore"></i> Pulihkan</button>';
             } else {
                 $commandRestore = '';
             }
-            if (php_check_hak_akses('pengaturan_user__destroy') == 'true') {
+            if (check_hak_akses('pengaturan_user__destroy') == 'true') {
                 $commandDestroy = '<button class="dropdown-item" onclick="destroyForm(' . $row->jabatan_id . ')"><i class="fas fa-dumpster-fire"></i> Hancurkan</button>';
             } else {
                 $commandDestroy = '';
@@ -246,7 +246,7 @@ class Pengaturan_jabatan extends MY_Controller
     // --------------------------------------------------------------------
     function process_restore()
     {
-        if (php_check_hak_akses('pengaturan_jabatan__restore') == 'true') {
+        if (check_hak_akses('pengaturan_jabatan__restore') == 'true') {
             add_log_open_menu('pengaturan_jabatan__restore');
             $process = $this->pengaturan_jabatan_m->restore_form__process();
             $result['success']      = $process;
@@ -264,7 +264,7 @@ class Pengaturan_jabatan extends MY_Controller
     // --------------------------------------------------------------------
     function process_restore_batch()
     {
-        if (php_check_hak_akses('pengaturan_jabatan__restore_batch') == 'true') {
+        if (check_hak_akses('pengaturan_jabatan__restore_batch') == 'true') {
             add_log_open_menu('pengaturan_jabatan__restore_batch');
             $process = $this->pengaturan_jabatan_m->restore_batch_form__process();
             $result['success']      = $process;
@@ -282,7 +282,7 @@ class Pengaturan_jabatan extends MY_Controller
     // --------------------------------------------------------------------
     function process_destroy()
     {
-        if (php_check_hak_akses('pengaturan_jabatan__destroy') == 'true') {
+        if (check_hak_akses('pengaturan_jabatan__destroy') == 'true') {
             add_log_open_menu('pengaturan_jabatan__destroy');
             $process = $this->pengaturan_jabatan_m->destroy_form__process();
             $result['success']      = $process;
@@ -300,7 +300,7 @@ class Pengaturan_jabatan extends MY_Controller
     // --------------------------------------------------------------------
     function process_destroy_batch()
     {
-        if (php_check_hak_akses('pengaturan_jabatan__destroy_batch') == 'true') {
+        if (check_hak_akses('pengaturan_jabatan__destroy_batch') == 'true') {
             add_log_open_menu('pengaturan_jabatan__destroy_batch');
             $process = $this->pengaturan_jabatan_m->destroy_batch_form__process();
             $result['success']      = $process;

@@ -1,4 +1,4 @@
-<?php if (php_check_hak_akses('pengaturan_jabatan__data') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_jabatan__data') == 'true') { ?>
     <script>
         $(document).ready(function() {
             loadTableMaster();
@@ -133,10 +133,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_jabatan__add') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_jabatan__add') == 'true') { ?>
     <script>
         function addForm() {
-            if (jsCheckHakAkses('pengaturan_jabatan__add') == 'true') {
+            if (checkHakAkses('pengaturan_jabatan__add') == 'true') {
                 window.open('<?= base_url('pengaturan/jabatan/add') ?>');
             } else {
                 alert(forbiddenAccess('pengaturan_jabatan__add'));
@@ -145,10 +145,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_jabatan__edit') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_jabatan__edit') == 'true') { ?>
     <script>
         function editForm(id) {
-            if (jsCheckHakAkses('pengaturan_jabatan__edit') == 'true') {
+            if (checkHakAkses('pengaturan_jabatan__edit') == 'true') {
                 window.open('<?= base_url('pengaturan/jabatan/edit/') ?>' + id);
             } else {
                 alert(forbiddenAccess('pengaturan_jabatan__edit'));
@@ -157,10 +157,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_jabatan__delete') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_jabatan__delete') == 'true') { ?>
     <script>
         function deleteForm(id) {
-            if (jsCheckHakAkses('pengaturan_jabatan__delete') == 'true') {
+            if (checkHakAkses('pengaturan_jabatan__delete') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dihapus',
@@ -214,10 +214,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_jabatan__delete_batch') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_jabatan__delete_batch') == 'true') { ?>
     <script>
         function processDeleteBatch() {
-            if (jsCheckHakAkses('pengaturan_jabatan__delete_batch') == 'true') {
+            if (checkHakAkses('pengaturan_jabatan__delete_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -285,10 +285,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_jabatan__recycle_bin') == 'true') { ?>
     <script>
         function binForm() {
-            if (jsCheckHakAkses('pengaturan_jabatan__recycle_bin') == 'true') {
+            if (checkHakAkses('pengaturan_jabatan__recycle_bin') == 'true') {
                 window.open('<?= base_url('pengaturan/jabatan/recycle_bin') ?>');
             } else {
                 alert(forbiddenAccess('pengaturan_jabatan__recycle_bin'));

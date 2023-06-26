@@ -1,4 +1,4 @@
-<?php if (php_check_hak_akses('pengaturan_user__data') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__data') == 'true') { ?>
     <script>
         $(document).ready(function() {
             loadTableMaster();
@@ -139,10 +139,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__add') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__add') == 'true') { ?>
     <script>
         function addForm() {
-            if (jsCheckHakAkses('pengaturan_user__add') == 'true') {
+            if (checkHakAkses('pengaturan_user__add') == 'true') {
                 window.open('<?= base_url('pengaturan/user/add') ?>');
             } else {
                 alert(forbiddenAccess('pengaturan_user__add'));
@@ -151,10 +151,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__edit') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__edit') == 'true') { ?>
     <script>
         function editForm(id) {
-            if (jsCheckHakAkses('pengaturan_user__edit') == 'true') {
+            if (checkHakAkses('pengaturan_user__edit') == 'true') {
                 window.open('<?= base_url('pengaturan/user/edit/') ?>' + id);
             } else {
                 alert(forbiddenAccess('pengaturan_user__edit'));
@@ -163,10 +163,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__delete') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__delete') == 'true') { ?>
     <script>
         function deleteForm(id) {
-            if (jsCheckHakAkses('pengaturan_user__delete') == 'true') {
+            if (checkHakAkses('pengaturan_user__delete') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dihapus',
@@ -220,10 +220,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__delete_batch') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__delete_batch') == 'true') { ?>
     <script>
         function processDeleteBatch() {
-            if (jsCheckHakAkses('pengaturan_user__delete_batch') == 'true') {
+            if (checkHakAkses('pengaturan_user__delete_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -291,10 +291,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__switch_active') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__switch_active') == 'true') { ?>
     <script>
         function gantiStatusKeaktifanForm(id) {
-            if (jsCheckHakAkses('pengaturan_user__switch_active') == 'true') {
+            if (checkHakAkses('pengaturan_user__switch_active') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: 'User ini akan diubah status keaktifannya. Jika user saat ini aktif, maka akan diubah menjadi nonaktif. Jika user saat ini nonaktif, maka akan diubah menjadi aktif. Yakin ingin melanjutkan?',
@@ -348,10 +348,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__switch_active_batch') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__switch_active_batch') == 'true') { ?>
     <script>
         function processGantiStatusKeaktifanBatch() {
-            if (jsCheckHakAkses('pengaturan_user__switch_active_batch') == 'true') {
+            if (checkHakAkses('pengaturan_user__switch_active_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -419,10 +419,10 @@
     </script>
 <?php } ?>
 
-<?php if (php_check_hak_akses('pengaturan_user__recycle_bin') == 'true') { ?>
+<?php if (check_hak_akses('pengaturan_user__recycle_bin') == 'true') { ?>
     <script>
         function binForm() {
-            if (jsCheckHakAkses('pengaturan_user__recycle_bin') == 'true') {
+            if (checkHakAkses('pengaturan_user__recycle_bin') == 'true') {
                 window.open('<?= base_url('pengaturan/user/recycle_bin') ?>');
             } else {
                 alert(forbiddenAccess('pengaturan_user__recycle_bin'));

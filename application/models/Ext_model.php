@@ -28,7 +28,7 @@ class Ext_model extends CI_Model
         return $result;
     }
 
-    function php_check_hak_akses($menu)
+    function check_hak_akses($menu)
     {
         $this->db->from('settings_jabatan__hak_akses');
         $this->db->where('menu', $menu);

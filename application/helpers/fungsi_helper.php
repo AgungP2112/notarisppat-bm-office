@@ -32,11 +32,11 @@ function check_root_hak_akses($menu)
     return $hakAkses;
 }
 
-function php_check_hak_akses($menu)
+function check_hak_akses($menu)
 {
     $ci = &get_instance();
     $ci->load->model('ext_model');
-    $hakAkses = $ci->ext_model->php_check_hak_akses($menu);
+    $hakAkses = $ci->ext_model->check_hak_akses($menu);
     return $hakAkses;
 }
 
