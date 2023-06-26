@@ -98,8 +98,14 @@ class Pengaturan_jabatan_m extends CI_Model
     // --------------------------------------------------------------------
     function edit_form__get()
     {
+        $this->db->select('settings_jabatan.*');
+        $this->db->select('settings_jabatan__hak_akses.root');
+        $this->db->select('settings_jabatan__hak_akses.menu');
+        $this->db->select('settings_jabatan__hak_akses.nama_menu');
+        $this->db->select('settings_jabatan__hak_akses.akses');
         $this->db->from('settings_jabatan');
-        $this->db->where('jabatan_id', $this->input->post('jabatan_id'));
+        $this->db->join('settings_jabatan__hak_akses', 'settings_jabatan__hak_akses.jabatan_id = settings_jabatan.jabatan_id');
+        $this->db->where('settings_jabatan.jabatan_id', $this->input->post('jabatan_id'));
         $query = $this->db->get();
         return $query;
     }
