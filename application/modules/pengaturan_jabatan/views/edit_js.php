@@ -26,6 +26,13 @@
     // ----------------------------------------------------------------------
     $('input[name="allCheckbox"]').click(function() {
         switch ($(this).attr('id')) {
+            case 'master_data_klien_all':
+                if ($(this).is(':checked')) {
+                    $('input[name="master_data_klien"]').prop('checked', true);
+                } else {
+                    $('input[name="master_data_klien"]').prop('checked', false);
+                }
+                break;
             case 'pengaturan_user_all':
                 if ($(this).is(':checked')) {
                     $('input[name="pengaturan_user"]').prop('checked', true);
