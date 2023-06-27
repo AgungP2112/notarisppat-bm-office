@@ -182,6 +182,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 } ?>
 
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'rekening' && $this->uri->segment(3) == '') {
+    if (check_hak_akses('master_data_rekening__data') == 'true') {
+        $this->load->view('master_data_rekening/main_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'rekening' && $this->uri->segment(3) == 'add') {
+    if (check_hak_akses('master_data_rekening__add') == 'true') {
+        $this->load->view('master_data_rekening/add_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'rekening' && $this->uri->segment(3) == 'edit') {
+    if (check_hak_akses('master_data_rekening__edit') == 'true') {
+        $this->load->view('master_data_rekening/edit_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'rekening' && $this->uri->segment(3) == 'edit_batch') {
+    if (check_hak_akses('master_data_rekening__edit_batch') == 'true') {
+        $this->load->view('master_data_rekening/edit_batch_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'rekening' && $this->uri->segment(3) == 'recycle_bin') {
+    if (check_hak_akses('master_data_rekening__recycle_bin') == 'true') {
+        $this->load->view('master_data_rekening/recycle_bin_js');
+    }
+} ?>
+
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == '') {
     if (check_hak_akses('pengaturan_user__data') == 'true') {
         $this->load->view('pengaturan_user/main_js');
