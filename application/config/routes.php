@@ -111,6 +111,26 @@ $route['master_data/klien/process/restore']        = 'master_data_klien/process_
 $route['master_data/klien/process/restore_batch']  = 'master_data_klien/process_restore_batch';
 $route['master_data/klien/process/destroy']        = 'master_data_klien/process_destroy';
 $route['master_data/klien/process/destroy_batch']  = 'master_data_klien/process_destroy_batch';
+
+// Master Data - Rekening
+$route['master_data/rekening']                        = 'master_data_rekening';
+$route['master_data/rekening/load/table/main']        = 'master_data_rekening/load_table_main';
+$route['master_data/rekening/add']                    = 'master_data_rekening/add_form';
+$route['master_data/rekening/process/add']            = 'master_data_rekening/process_add';
+$route['master_data/rekening/edit/(:num)']            = 'master_data_rekening/edit_form';
+$route['master_data/rekening/load/data/edit']         = 'master_data_rekening/load_data_edit';
+$route['master_data/rekening/process/edit']           = 'master_data_rekening/process_edit';
+$route['master_data/rekening/edit_batch/(:any)']      = 'master_data_rekening/edit_batch_form';
+$route['master_data/rekening/load/data/edit_batch']   = 'master_data_rekening/load_data_edit_batch';
+$route['master_data/rekening/process/edit_batch']     = 'master_data_rekening/process_edit_batch';
+$route['master_data/rekening/process/delete']         = 'master_data_rekening/process_delete';
+$route['master_data/rekening/process/delete_batch']   = 'master_data_rekening/process_delete_batch';
+$route['master_data/rekening/recycle_bin']            = 'master_data_rekening/recycle_bin_form';
+$route['master_data/rekening/load/table/recycle_bin'] = 'master_data_rekening/load_table_recycle_bin';
+$route['master_data/rekening/process/restore']        = 'master_data_rekening/process_restore';
+$route['master_data/rekening/process/restore_batch']  = 'master_data_rekening/process_restore_batch';
+$route['master_data/rekening/process/destroy']        = 'master_data_rekening/process_destroy';
+$route['master_data/rekening/process/destroy_batch']  = 'master_data_rekening/process_destroy_batch';
 // --------------------------------------------------------------------
 // PENGATURAN
 // --------------------------------------------------------------------
