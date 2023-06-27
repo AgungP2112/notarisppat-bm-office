@@ -130,6 +130,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
     $this->load->view('profil/main_js');
 } ?>
 
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'penanggung_jawab' && $this->uri->segment(3) == '') {
+    if (check_hak_akses('master_data_penanggung_jawab__data') == 'true') {
+        $this->load->view('master_data_penanggung_jawab/main_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'penanggung_jawab' && $this->uri->segment(3) == 'add') {
+    if (check_hak_akses('master_data_penanggung_jawab__add') == 'true') {
+        $this->load->view('master_data_penanggung_jawab/add_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'penanggung_jawab' && $this->uri->segment(3) == 'edit') {
+    if (check_hak_akses('master_data_penanggung_jawab__edit') == 'true') {
+        $this->load->view('master_data_penanggung_jawab/edit_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'penanggung_jawab' && $this->uri->segment(3) == 'edit_batch') {
+    if (check_hak_akses('master_data_penanggung_jawab__edit_batch') == 'true') {
+        $this->load->view('master_data_penanggung_jawab/edit_batch_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'penanggung_jawab' && $this->uri->segment(3) == 'recycle_bin') {
+    if (check_hak_akses('master_data_penanggung_jawab__recycle_bin') == 'true') {
+        $this->load->view('master_data_penanggung_jawab/recycle_bin_js');
+    }
+} ?>
+
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == '') {
     if (check_hak_akses('pengaturan_user__data') == 'true') {
         $this->load->view('pengaturan_user/main_js');
