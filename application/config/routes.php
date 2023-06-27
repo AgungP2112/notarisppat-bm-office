@@ -72,6 +72,25 @@ $route['template/add_log']             = 'template/add_log_client';
 $route['template/call_pusher']         = 'template/call_pusher';
 $route['error_403']                    = 'template/error_403';
 
+// Master Data - Klien
+$route['master_data/klien']                        = 'master_data_klien';
+$route['master_data/klien/load/table/main']        = 'master_data_klien/load_table_main';
+$route['master_data/klien/add']                    = 'master_data_klien/add_form';
+$route['master_data/klien/process/add']            = 'master_data_klien/process_add';
+$route['master_data/klien/edit/(:num)']            = 'master_data_klien/edit_form';
+$route['master_data/klien/load/data/edit']         = 'master_data_klien/load_data_edit';
+$route['master_data/klien/process/edit']           = 'master_data_klien/process_edit';
+$route['master_data/klien/edit_batch/(:any)']      = 'master_data_klien/edit_batch_form';
+$route['master_data/klien/load/data/edit_batch']   = 'master_data_klien/load_data_edit_batch';
+$route['master_data/klien/process/edit_batch']     = 'master_data_klien/process_edit_batch';
+$route['master_data/klien/process/delete']         = 'master_data_klien/process_delete';
+$route['master_data/klien/process/delete_batch']   = 'master_data_klien/process_delete_batch';
+$route['master_data/klien/recycle_bin']            = 'master_data_klien/recycle_bin_form';
+$route['master_data/klien/load/table/recycle_bin'] = 'master_data_klien/load_table_recycle_bin';
+$route['master_data/klien/process/restore']        = 'master_data_klien/process_restore';
+$route['master_data/klien/process/restore_batch']  = 'master_data_klien/process_restore_batch';
+$route['master_data/klien/process/destroy']        = 'master_data_klien/process_destroy';
+$route['master_data/klien/process/destroy_batch']  = 'master_data_klien/process_destroy_batch';
 // --------------------------------------------------------------------
 // PENGATURAN
 // --------------------------------------------------------------------
