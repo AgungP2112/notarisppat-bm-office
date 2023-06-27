@@ -137,11 +137,9 @@ class Master_data_rekening extends MY_Controller
     function process_edit()
     {
         $this->form_validation->set_rules("nama", "NAMA", "required", ["required" => "Nama rekening harus diisi"]);
-        $this->form_validation->set_rules("nomor_rekening", "NOMORREKENING", "required", ["required" => "Nomor rekening harus diisi"]);
         if ($this->form_validation->run() == false) {
             $result['error']              = true;
             $result['namaError']          = form_error("nama");
-            $result['nomorRekeningError'] = form_error("nomor_rekening");
         } else {
             $process = $this->master_data_rekening_m->edit_form__process();
             if ($process == true) {
@@ -175,11 +173,9 @@ class Master_data_rekening extends MY_Controller
     function process_edit_batch()
     {
         $this->form_validation->set_rules("nama", "NAMA", "callback_checkbox_nama", ["checkbox_nama" => "Nama rekening harus diisi"]);
-        $this->form_validation->set_rules("nomor_rekening", "NOMORREKENING", "callback_checkbox_nomor_rekening", ["checkbox_nomor_rekening" => "Nomor rekening harus diisi"]);
         if ($this->form_validation->run() == false) {
             $result['error']              = true;
             $result['namaError']          = form_error("nama");
-            $result['nomorRekeningError'] = form_error("nomor_rekening");
         } else {
             $process = $this->master_data_rekening_m->edit_batch_form__process();
             if ($process == true) {
@@ -194,15 +190,6 @@ class Master_data_rekening extends MY_Controller
     function checkbox_nama()
     {
         if ($this->input->post('nama_check') == 'true' && $this->input->post('nama') == '') {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    function checkbox_nomor_rekening()
-    {
-        if ($this->input->post('nomor_rekening_check') == 'true' && $this->input->post('nomor_rekening') == '') {
             return false;
         } else {
             return true;
