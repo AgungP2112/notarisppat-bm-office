@@ -72,6 +72,28 @@ $route['template/add_log']             = 'template/add_log_client';
 $route['template/call_pusher']         = 'template/call_pusher';
 $route['error_403']                    = 'template/error_403';
 
+// Master Data - Penanggung Jawab
+$route['master_data/penanggung_jawab']                        = 'master_data_penanggung_jawab';
+$route['master_data/penanggung_jawab/load/table/main']        = 'master_data_penanggung_jawab/load_table_main';
+$route['master_data/penanggung_jawab/add']                    = 'master_data_penanggung_jawab/add_form';
+$route['master_data/penanggung_jawab/process/add']            = 'master_data_penanggung_jawab/process_add';
+$route['master_data/penanggung_jawab/edit/(:num)']            = 'master_data_penanggung_jawab/edit_form';
+$route['master_data/penanggung_jawab/load/data/edit']         = 'master_data_penanggung_jawab/load_data_edit';
+$route['master_data/penanggung_jawab/process/edit']           = 'master_data_penanggung_jawab/process_edit';
+$route['master_data/penanggung_jawab/edit_batch/(:any)']      = 'master_data_penanggung_jawab/edit_batch_form';
+$route['master_data/penanggung_jawab/load/data/edit_batch']   = 'master_data_penanggung_jawab/load_data_edit_batch';
+$route['master_data/penanggung_jawab/process/edit_batch']     = 'master_data_penanggung_jawab/process_edit_batch';
+$route['master_data/penanggung_jawab/process/delete']         = 'master_data_penanggung_jawab/process_delete';
+$route['master_data/penanggung_jawab/process/delete_batch']   = 'master_data_penanggung_jawab/process_delete_batch';
+$route['master_data/penanggung_jawab/recycle_bin']            = 'master_data_penanggung_jawab/recycle_bin_form';
+$route['master_data/penanggung_jawab/load/table/recycle_bin'] = 'master_data_penanggung_jawab/load_table_recycle_bin';
+$route['master_data/penanggung_jawab/process/restore']        = 'master_data_penanggung_jawab/process_restore';
+$route['master_data/penanggung_jawab/process/restore_batch']  = 'master_data_penanggung_jawab/process_restore_batch';
+$route['master_data/penanggung_jawab/process/destroy']        = 'master_data_penanggung_jawab/process_destroy';
+$route['master_data/penanggung_jawab/process/destroy_batch']  = 'master_data_penanggung_jawab/process_destroy_batch';
+
+
+
 // --------------------------------------------------------------------
 // PENGATURAN
 // --------------------------------------------------------------------
