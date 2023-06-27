@@ -223,7 +223,7 @@ class Master_data_rekening extends MY_Controller
         if (check_hak_akses('master_data_rekening__delete_batch') == 'true') {
             add_log_open_menu('master_data_rekening__delete_batch');
             $process = $this->master_data_rekening_m->delete_batch_form__process();
-            $result['success']      = $process;
+            $result['success']  = $process;
         } else {
             add_log_forbidden('master_data_rekening__delete_batch');
             $result['success']  = false;
@@ -337,7 +337,7 @@ class Master_data_rekening extends MY_Controller
         if (check_hak_akses('master_data_rekening__destroy') == 'true') {
             add_log_open_menu('master_data_rekening__destroy');
             $process = $this->master_data_rekening_m->destroy_form__process();
-            $result['success']      = $process;
+            $result['success']  = $process;
         } else {
             add_log_forbidden('master_data_rekening__destroy');
             $result['success']  = false;
@@ -355,7 +355,7 @@ class Master_data_rekening extends MY_Controller
         if (check_hak_akses('master_data_rekening__destroy_batch') == 'true') {
             add_log_open_menu('master_data_rekening__destroy_batch');
             $process = $this->master_data_rekening_m->destroy_batch_form__process();
-            $result['success']      = $process;
+            $result['success']  = $process;
         } else {
             add_log_forbidden('master_data_rekening__destroy_batch');
             $result['success']  = false;

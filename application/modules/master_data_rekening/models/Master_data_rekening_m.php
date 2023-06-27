@@ -10,16 +10,15 @@ class Master_data_rekening_m extends CI_Model
 		$orderColumn  = [null, null, null, "nama", "nomor_rekening"];
 		$searchColumn = [null, null, null, "nama", "nomor_rekening"];
 		$order        = ["rekening_id" => "desc"];
-
-		$a = 0;
+		$row          = 0;
 
 		$this->db->from('master_rekening');
 		$this->db->where('deleted', null);
 		foreach ($searchColumn as $item) {
-			if ($item != null && $_POST['columns'][$a]['search']['value']) {
-				$this->db->like($item, $_POST['columns'][$a]['search']['value']);
+			if ($item != null && $_POST['columns'][$row]['search']['value']) {
+				$this->db->like($item, $_POST['columns'][$row]['search']['value']);
 			}
-			$a++;
+			$row++;
 		}
 		if (isset($_POST["order"])) {
 			$this->db->order_by($orderColumn[$_POST["order"]["0"]["column"]], $_POST["order"]["0"]["dir"]);
@@ -284,16 +283,15 @@ class Master_data_rekening_m extends CI_Model
 		$orderColumn  = [null, null, null, "nama", "nomor_rekening"];
 		$searchColumn = [null, null, null, "nama", "nomor_rekening"];
 		$order        = ["rekening_id" => "desc"];
-
-		$a = 0;
+		$row          = 0;
 
 		$this->db->from('master_rekening');
 		$this->db->where('deleted !=', null);
 		foreach ($searchColumn as $item) {
-			if ($item != null && $_POST['columns'][$a]['search']['value']) {
-				$this->db->like($item, $_POST['columns'][$a]['search']['value']);
+			if ($item != null && $_POST['columns'][$row]['search']['value']) {
+				$this->db->like($item, $_POST['columns'][$row]['search']['value']);
 			}
-			$a++;
+			$row++;
 		}
 		if (isset($_POST["order"])) {
 			$this->db->order_by($orderColumn[$_POST["order"]["0"]["column"]], $_POST["order"]["0"]["dir"]);
