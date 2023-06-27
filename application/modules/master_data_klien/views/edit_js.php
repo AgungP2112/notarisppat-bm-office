@@ -5,57 +5,26 @@
     // ----------------------------------------------------------------------
     function loadMainData() {
         $.ajax({
-            url: '<?= base_url('pengaturan/jabatan/load/data/edit') ?>',
+            url: '<?= base_url('master_data/klien/load/data/edit') ?>',
             type: 'POST',
             dataType: 'json',
             data: {
-                jabatan_id: '<?= $this->uri->segment(4) ?>'
+                klien_id: '<?= $this->uri->segment(4) ?>'
+            },
+            beforeSend: function() {
+                HoldOn.open({
+                    theme: 'sk-circle',
+                    message: "<h4>Memproses ... </h4>"
+                })
+            },
+            complete: function() {
+                HoldOn.close();
             },
             success: function(data) {
-                $('#nama').val(data[0].nama);
-                data.forEach(function(row) {
-                    if (row.akses == 'true') {
-                        $('#' + row.menu).prop('checked', true);
-                    } else {
-                        $('#' + row.menu).prop('checked', false);
-                    }
-                });
+                $('#nama').val(data.nama);
             }
         })
     };
-    // ----------------------------------------------------------------------
-    $('input[name="allCheckbox"]').click(function() {
-        switch ($(this).attr('id')) {
-            case 'master_data_penanggung_jawab_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="master_data_penanggung_jawab"]').prop('checked', true);
-                } else {
-                    $('input[name="master_data_penanggung_jawab"]').prop('checked', false);
-                }
-                break;
-            case 'master_data_klien_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="master_data_klien"]').prop('checked', true);
-                } else {
-                    $('input[name="master_data_klien"]').prop('checked', false);
-                }
-                break;
-            case 'pengaturan_user_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="pengaturan_user"]').prop('checked', true);
-                } else {
-                    $('input[name="pengaturan_user"]').prop('checked', false);
-                }
-                break;
-            case 'pengaturan_jabatan_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="pengaturan_jabatan"]').prop('checked', true);
-                } else {
-                    $('input[name="pengaturan_jabatan"]').prop('checked', false);
-                }
-                break;
-        }
-    });
     // ----------------------------------------------------------------------
     function processForm() {
         Swal.fire({
@@ -72,26 +41,13 @@
             if (result.value) {
                 $('#submit').blur();
 
-                var table = [];
-                var sub;
-                $('input[data-checkbox="true"]').each(function() {
-                    sub = {
-                        root: $(this).attr('name'),
-                        menu: $(this).attr('id'),
-                        nama_menu: $(this).data('namamenu'),
-                        akses: $(this).is(':checked')
-                    }
-                    table.push(sub);
-                });
-
                 $.ajax({
-                    url: '<?= base_url('pengaturan/jabatan/process/edit') ?>',
+                    url: '<?= base_url('master_data/klien/process/edit') ?>',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        jabatan_id: '<?= $this->uri->segment(4) ?>',
-                        nama: $('#nama').val(),
-                        table: table
+                        klien_id: '<?= $this->uri->segment(4) ?>',
+                        nama: $('#nama').val()
                     },
                     beforeSend: function() {
                         HoldOn.open({
@@ -117,7 +73,7 @@
                             });
                         }
                         if (data.success) {
-                            callPusher(['pushPengaturanJabatan']);
+                            callPusher(['pushMasterDataKlien']);
                             Swal.fire({
                                 title: 'Konfirmasi',
                                 text: 'Data berhasil disimpan',

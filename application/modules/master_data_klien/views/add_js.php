@@ -1,38 +1,4 @@
 <script>
-    // ----------------------------------------------------------------------
-    $('input[name="allCheckbox"]').click(function() {
-        switch ($(this).attr('id')) {
-            case 'master_data_penanggung_jawab_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="master_data_penanggung_jawab"]').prop('checked', true);
-                } else {
-                    $('input[name="master_data_penanggung_jawab"]').prop('checked', false);
-                }
-                break;
-            case 'master_data_klien_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="master_data_klien"]').prop('checked', true);
-                } else {
-                    $('input[name="master_data_klien"]').prop('checked', false);
-                }
-                break;
-            case 'pengaturan_user_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="pengaturan_user"]').prop('checked', true);
-                } else {
-                    $('input[name="pengaturan_user"]').prop('checked', false);
-                }
-                break;
-            case 'pengaturan_jabatan_all':
-                if ($(this).is(':checked')) {
-                    $('input[name="pengaturan_jabatan"]').prop('checked', true);
-                } else {
-                    $('input[name="pengaturan_jabatan"]').prop('checked', false);
-                }
-                break;
-        }
-    });
-    // ----------------------------------------------------------------------
     function processForm() {
         Swal.fire({
             title: 'Konfirmasi',
@@ -48,25 +14,12 @@
             if (result.value) {
                 $('#submit').blur();
 
-                var table = [];
-                var sub;
-                $('input[data-checkbox="true"]').each(function() {
-                    sub = {
-                        root: $(this).attr('name'),
-                        menu: $(this).attr('id'),
-                        nama_menu: $(this).data('namamenu'),
-                        akses: $(this).is(':checked')
-                    }
-                    table.push(sub);
-                });
-
                 $.ajax({
-                    url: '<?= base_url('pengaturan/jabatan/process/add') ?>',
+                    url: '<?= base_url('master_data/klien/process/add') ?>',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        nama: $('#nama').val(),
-                        table: table
+                        nama: $('#nama').val()
                     },
                     beforeSend: function() {
                         HoldOn.open({
@@ -92,7 +45,7 @@
                             });
                         }
                         if (data.success) {
-                            callPusher(['pushPengaturanJabatan']);
+                            callPusher(['pushMasterDataKlien']);
                             Swal.fire({
                                 title: 'Konfirmasi',
                                 text: 'Data berhasil disimpan',
