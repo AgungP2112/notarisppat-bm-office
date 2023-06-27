@@ -12,6 +12,24 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="sidebar-brand-text mx-3">Notaris/PPAT</div>
             </a>
             <?php if (
+                check_root_hak_akses('master_data_penanggung_jawab') == true
+            ) { ?>
+                <li class="nav-item <?= $this->uri->segment(1) == 'master_data' ? 'active' : '' ?>">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMasterData" aria-expanded="true" aria-controls="collapseMasterData">
+                        <i class="fas fa-desktop"></i>
+                        <span>Master Data</span>
+                    </a>
+                    <div id="collapseMasterData" class="collapse <?= $this->uri->segment(1) == 'master_data' ? 'show' : '' ?>" aria-labelledby="headingMasterData" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Master Data</h6>
+                            <?php if (check_root_hak_akses('master_data_penanggung_jawab') == true) { ?>
+                                <a class="collapse-item <?= $this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'penanggung_jawab' ? 'active' : '' ?>" href="<?= base_url('master_data/penanggung_jawab') ?>">Penanggung Jawab</a>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </li>
+            <?php } ?>
+            <?php if (
                 check_root_hak_akses('pengaturan_user') == true ||
                 check_root_hak_akses('pengaturan_jabatan') == true ||
                 check_root_hak_akses('pengaturan_log_aktivitas') == true
