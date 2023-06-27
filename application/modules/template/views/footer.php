@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <strong>Copyright &copy; 2023 | Clover Code Palu | Developed by Agung Prasetyo </strong>
+            <strong>Copyright &copy; 2023 | Notaris/PPAT | Developed by Agung Prasetyo </strong>
         </div>
     </div>
 </footer>

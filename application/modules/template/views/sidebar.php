@@ -7,9 +7,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url() ?>">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-clover fa-3x"></i>
+                    <i class="fas fa-book-bookmark fa-2x"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Clover Code Palu</div>
+                <div class="sidebar-brand-text mx-3">Notaris/PPAT</div>
             </a>
             <?php if (
                 check_root_hak_akses('pengaturan_user') == true ||
@@ -45,8 +45,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
         <!-- <aside class="main-sidebar sidebar-dark-light elevation-4">
     <a href="javascript:void(0)" class="brand-link bg-dark text-white text-center">
-        <img src="<?= base_url('assets') ?>/logo.jpg" alt="Clover Code Palu Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text">Clover Code Palu</span>
+        <img src="<?= base_url('assets') ?>/logo.jpg" alt="Notaris/PPAT Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text">Notaris/PPAT</span>
     </a>
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -55,7 +55,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <div class="info">
                 <a href="javascript:void(0)" class="d-block">
-                    <?= $this->session->userdata('clover_code_namauser') ?>
+                    <?= $this->session->userdata('notarisppat_namauser') ?>
                 </a>
             </div>
         </div>

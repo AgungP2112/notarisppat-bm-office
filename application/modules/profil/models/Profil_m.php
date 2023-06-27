@@ -11,7 +11,7 @@ class Profil_m extends CI_Model
         $this->db->select('settings_jabatan.nama as nama_jabatan');
         $this->db->from('settings_user');
         $this->db->join('settings_jabatan', 'settings_jabatan.jabatan_id = settings_user.jabatan_id');
-        $this->db->where('settings_user.user_id', $this->session->userdata('clover_code_userid'));
+        $this->db->where('settings_user.user_id', $this->session->userdata('notarisppat_userid'));
         $query = $this->db->get();
         return $query;
     }
@@ -20,7 +20,7 @@ class Profil_m extends CI_Model
     {
         $this->db->from('settings_user');
         $this->db->where('username', $this->input->post('username'));
-        $this->db->where('user_id !=', $this->session->userdata('clover_code_userid'));
+        $this->db->where('user_id !=', $this->session->userdata('notarisppat_userid'));
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -36,7 +36,7 @@ class Profil_m extends CI_Model
         }
         $params['user_update_id']   = user_id();
         $params['updated']          = date('Y-m-d H:i:s');
-        $this->db->where('user_id', $this->session->userdata('clover_code_userid'));
+        $this->db->where('user_id', $this->session->userdata('notarisppat_userid'));
         $this->db->update('settings_user', $params);
         // ----------------------------------------------------------------------
         if ($this->db->affected_rows() > 0) {

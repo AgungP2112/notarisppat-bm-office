@@ -15,7 +15,7 @@ class Profil extends MY_Controller
         add_log('Membuka menu <b>Profil</b>');
         $data['main']    = $this->profil_m->load()->row();
         $data['content'] = 'profil/main';
-        $data['title']   = 'Profil - Clover Code Palu';
+        $data['title']   = 'Profil - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 

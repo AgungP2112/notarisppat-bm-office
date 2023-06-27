@@ -29,7 +29,7 @@ class Pengaturan_jabatan extends MY_Controller
     {
         add_log_open_menu('pengaturan_jabatan__data');
         $data['content'] = 'pengaturan_jabatan/main';
-        $data['title']   = 'Pengaturan - Jabatan - Clover Code Palu';
+        $data['title']   = 'Pengaturan - Jabatan - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 
@@ -91,7 +91,7 @@ class Pengaturan_jabatan extends MY_Controller
     {
         add_log_open_menu('pengaturan_jabatan__add');
         $data['content'] = 'pengaturan_jabatan/add_form';
-        $data['title']   = 'Pengaturan - Jabatan - Tambah - Clover Code Palu';
+        $data['title']   = 'Pengaturan - Jabatan - Tambah - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 
@@ -120,7 +120,7 @@ class Pengaturan_jabatan extends MY_Controller
     {
         add_log_open_menu('pengaturan_jabatan__edit');
         $data['content'] = 'pengaturan_jabatan/edit_form';
-        $data['title']   = 'Pengaturan - Jabatan - Edit - Clover Code Palu';
+        $data['title']   = 'Pengaturan - Jabatan - Edit - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 
@@ -191,7 +191,7 @@ class Pengaturan_jabatan extends MY_Controller
     {
         add_log_open_menu('pengaturan_jabatan__recycle_bin');
         $data['content'] = 'pengaturan_jabatan/recycle_bin_form';
-        $data['title']   = 'Pengaturan - Jabatan - Lihat Tong Sampah - Clover Code Palu';
+        $data['title']   = 'Pengaturan - Jabatan - Lihat Tong Sampah - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 

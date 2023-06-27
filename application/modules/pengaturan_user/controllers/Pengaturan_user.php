@@ -31,7 +31,7 @@ class Pengaturan_user extends MY_Controller
     {
         add_log_open_menu('pengaturan_user__data');
         $data['content'] = 'pengaturan_user/main';
-        $data['title'] = 'Pengaturan - User - Clover Code Palu';
+        $data['title'] = 'Pengaturan - User - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 
@@ -111,7 +111,7 @@ class Pengaturan_user extends MY_Controller
     {
         add_log_open_menu('pengaturan_user__add');
         $data['content']    = 'pengaturan_user/add_form';
-        $data['title']      = 'Pengaturan - User - Tambah - Clover Code Palu';
+        $data['title']      = 'Pengaturan - User - Tambah - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 
@@ -148,7 +148,7 @@ class Pengaturan_user extends MY_Controller
     {
         add_log_open_menu('pengaturan_user__edit');
         $data['content']    = 'pengaturan_user/edit_form';
-        $data['title']      = 'Pengaturan - User - Edit - Clover Code Palu';
+        $data['title']      = 'Pengaturan - User - Edit - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 
@@ -271,7 +271,7 @@ class Pengaturan_user extends MY_Controller
     {
         add_log_open_menu('pengaturan_user__recycle_bin');
         $data['content'] = 'pengaturan_user/recycle_bin_form';
-        $data['title']   = 'Pengaturan - User - Lihat Tong Sampah - Clover Code Palu';
+        $data['title']   = 'Pengaturan - User - Lihat Tong Sampah - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 

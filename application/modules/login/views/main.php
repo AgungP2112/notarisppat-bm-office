@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
                 <div class="card shadow-sm my-5">
                     <div class="card-header bg-primary text-white text-center">
-                        <h2 class="m-0 font-weight-bold "> <i class="fa-solid fa-clover"></i> Clover Code Palu</h2>
+                        <h2 class="m-0 font-weight-bold "> <i class="fas fa-book-bookmark"></i> Notaris/PPAT</h2>
                     </div>
                     <div class="card-body p-0">
                         <div class="row">
@@ -23,11 +23,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                         <input type="password" id="password" class="form-control" placeholder="Password ...">
                                         <div class="input-group-append"><span class="input-group-text"><i class="fas fa-lock"></i></span></div>
                                     </div>
-                                    <p>Akun standard
-                                        <br>Username : super
-                                        <br>Password : super
-                                        <br>Jabatan : Super Administrator
-                                    </p>
                                     <button type="button" id="submit" class="btn btn-primary btn-block" onclick="processForm()"><i class="fa fa-sign-in-alt"></i> LOGIN
                                     </button>
 
@@ -37,8 +32,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="card-footer text-center">
-                        <strong>Clover Code Palu 1.0.0</strong> <br>
-                        Copyright 2022 - <?= date('Y') ?> | Clover Code Palu | Developed by Agung Prasetyo
+                        <strong>Notaris/PPAT 1.0.0</strong> <br>
+                        Copyright 2022 - <?= date('Y') ?> | Notaris/PPAT | Developed by Agung Prasetyo
                     </div>
                 </div>
             </div>
@@ -52,8 +47,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="login-box" style="width:500px">
             <div class="card shadow-lg">
                 <div class="card-header text-center bg-gradient-dark d-flex">
-                    <img src="<?= base_url('assets') ?>/logo.jpg" alt="Clover Code Palu Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="20%">
-                    <h2 style="margin-top:30px;margin-left:80px">Clover Code Palu</h2>
+                    <img src="<?= base_url('assets') ?>/logo.jpg" alt="Notaris/PPAT Logo" class="brand-image img-circle elevation-3" style="opacity: .8" width="20%">
+                    <h2 style="margin-top:30px;margin-left:80px">Notaris/PPAT</h2>
                 </div>
                 <div class="card-body">
                     <p class="login-box-msg"><strong>LOGIN</strong></p>
@@ -78,8 +73,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </button>
                 </div>
                 <div class="card-footer text-center">
-                    <strong>Clover Code Palu 1.0.0</strong> <br>
-                    Copyright 2022 - <?= date('Y') ?> | Clover Code Palu | Developed by Agung Prasetyo
+                    <strong>Notaris/PPAT 1.0.0</strong> <br>
+                    Copyright 2022 - <?= date('Y') ?> | Notaris/PPAT | Developed by Agung Prasetyo
                 </div>
             </div>
         </div> -->

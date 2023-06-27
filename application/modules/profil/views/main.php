@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="text-center">
                     <i class="fas fa-user-circle fa-4x text-primary"></i>
                 </div>
-                <h3 class="profile-username text-center"><?= $this->session->userdata('clover_code__namauser') ?></h3>
+                <h3 class="profile-username text-center"><?= $this->session->userdata('notarisppat__namauser') ?></h3>
                 <p class="text-muted text-center"><?= $main->nama_jabatan ?></p>
             </div>
         </div>

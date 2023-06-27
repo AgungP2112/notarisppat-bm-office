@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-circle fa-2x text-white"></i>
-                        <span class="ml-2 text-white"><?= $this->session->userdata('clover_code_namauser') ?></span>
+                        <span class="ml-2 text-white"><?= $this->session->userdata('notarisppat_namauser') ?></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="<?= base_url('profil') ?>">

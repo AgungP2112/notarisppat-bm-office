@@ -3,13 +3,13 @@
 function user_id()
 {
     $ci = &get_instance();
-    return $ci->session->userdata('clover_code_userid');
+    return $ci->session->userdata('notarisppat_userid');
 }
 
 function check_already_login()
 {
     $ci = &get_instance();
-    $userSession = $ci->session->userdata('clover_code_userid');
+    $userSession = $ci->session->userdata('notarisppat_userid');
     if ($userSession) {
         redirect(base_url() . 'profil');
     }
@@ -18,7 +18,7 @@ function check_already_login()
 function check_not_login()
 {
     $ci = &get_instance();
-    $userSession = $ci->session->userdata('clover_code_userid');
+    $userSession = $ci->session->userdata('notarisppat_userid');
     if (!$userSession) {
         redirect(base_url() . 'login');
     }
@@ -66,7 +66,7 @@ function call_pusher($channel)
     $status = true;
     if ($status == true) {
         $options = ['cluster' => 'ap1', 'useTLS' => true];
-        $pusher = new Pusher\Pusher('535091a164e2cfedfb65', 'b9ae001a89cea18ac87c', '1622575', $options);
+        $pusher = new Pusher\Pusher('466d37c14733aee83030', '67cfcd50f402f955110c', '1418655', $options);
         foreach ($channel as $row) {
             $pusher->trigger('my-channel', $row, null);
         }

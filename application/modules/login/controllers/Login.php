@@ -12,7 +12,7 @@ class Login extends MY_Controller
     {
         check_already_login();
         $data["content"]  = 'login/main';
-        $data["title"]    = 'Login - Clover Code Palu';
+        $data["title"]    = 'Login - Notaris/PPAT';
         $this->template->login_template($data);
     }
 
@@ -29,9 +29,9 @@ class Login extends MY_Controller
             if ($data->num_rows() > 0) {
                 if (password_verify($this->input->post('password'), $data->row()->password)) {
                     if ($data->row()->aktif == 'true') {
-                        $params["clover_code_userid"]     = $data->row()->user_id;
-                        $params["clover_code_namauser"]   = $data->row()->nama;
-                        $params["clover_code_jabatanid"]  = $data->row()->jabatan_id;
+                        $params["notarisppat_userid"]     = $data->row()->user_id;
+                        $params["notarisppat_namauser"]   = $data->row()->nama;
+                        $params["notarisppat_jabatanid"]  = $data->row()->jabatan_id;
                         $this->session->set_userdata($params);
                         add_log(
                             '<div>Login</div>'
@@ -62,9 +62,9 @@ class Login extends MY_Controller
     function logout()
     {
         $params = [];
-        $params[] = 'clover_code_userid';
-        $params[] = 'clover_code_namauser';
-        $params[] = 'clover_code_jabatanid';
+        $params[] = 'notarisppat_userid';
+        $params[] = 'notarisppat_namauser';
+        $params[] = 'notarisppat_jabatanid';
         add_log(
             '<div>Logout</div>'
         );

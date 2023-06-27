@@ -20,7 +20,7 @@ class Pengaturan_log_aktivitas extends MY_Controller
     {
         add_log_open_menu('pengaturan_log_aktivitas');
         $data['content'] = 'pengaturan_log_aktivitas/main';
-        $data['title'] = 'Pengaturan - Log Aktivitas - Clover Code Palu';
+        $data['title'] = 'Pengaturan - Log Aktivitas - Notaris/PPAT';
         $this->template->normal_template($data);
     }
 

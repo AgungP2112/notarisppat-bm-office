@@ -10,7 +10,7 @@
             });
         });
         // ----------------------------------------------------------------------
-        var pusher = new Pusher('535091a164e2cfedfb65', {
+        var pusher = new Pusher('466d37c14733aee83030', {
             cluster: 'ap1'
         });
         var channel = pusher.subscribe('my-channel');

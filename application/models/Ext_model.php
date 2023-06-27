@@ -16,7 +16,7 @@ class Ext_model extends CI_Model
     {
         $this->db->from('settings_jabatan__hak_akses');
         $this->db->where('root', $menu);
-        $this->db->where('jabatan_id', $this->session->userdata('clover_code_jabatanid'));
+        $this->db->where('jabatan_id', $this->session->userdata('notarisppat_jabatanid'));
         $query = $this->db->get();
         $result = false;
         foreach ($query->result() as $row) {
@@ -32,7 +32,7 @@ class Ext_model extends CI_Model
     {
         $this->db->from('settings_jabatan__hak_akses');
         $this->db->where('menu', $menu);
-        $this->db->where('jabatan_id', $this->session->userdata('clover_code_jabatanid'));
+        $this->db->where('jabatan_id', $this->session->userdata('notarisppat_jabatanid'));
         $query = $this->db->get();
         return $query->row()->akses;
     }
@@ -41,7 +41,7 @@ class Ext_model extends CI_Model
     {
         $this->db->from('settings_jabatan__hak_akses');
         $this->db->where('menu', $menu);
-        $this->db->where('jabatan_id', $this->session->userdata('clover_code_jabatanid'));
+        $this->db->where('jabatan_id', $this->session->userdata('notarisppat_jabatanid'));
         $query = $this->db->get();
         return $query;
     }
