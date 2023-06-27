@@ -13,7 +13,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </a>
             <?php if (
                 check_root_hak_akses('master_data_penanggung_jawab') == true ||
-                check_root_hak_akses('master_data_klien') == true
+                check_root_hak_akses('master_data_klien') == true ||
+                check_root_hak_akses('master_data_rekening') == true
             ) { ?>
                 <li class="nav-item <?= $this->uri->segment(1) == 'master_data' ? 'active' : '' ?>">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMasterData" aria-expanded="true" aria-controls="collapseMasterData">
@@ -28,6 +29,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <?php } ?>
                             <?php if (check_root_hak_akses('master_data_klien') == true) { ?>
                                 <a class="collapse-item <?= $this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'klien' ? 'active' : '' ?>" href="<?= base_url('master_data/klien') ?>">Klien</a>
+                            <?php } ?>
+                            <?php if (check_root_hak_akses('master_data_rekening') == true) { ?>
+                                <a class="collapse-item <?= $this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'rekening' ? 'active' : '' ?>" href="<?= base_url('master_data/rekening') ?>">Rekening</a>
                             <?php } ?>
                         </div>
                     </div>
