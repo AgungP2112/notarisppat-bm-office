@@ -268,6 +268,91 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </td>
                         </tr>
                     </section>
+                    <section id="master_data_kategori_transaksi-sec">
+                        <tr>
+                            <td colspan="2" class="text-white bg-primary"><i><b>Master Data - Kategori Transaksi</b></i></td>
+                            <td class="text-white bg-primary" style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="allCheckbox" id="master_data_kategori_transaksi_all">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">1.</td>
+                            <td>Data</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__data" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">2.</td>
+                            <td>Tambah</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__add" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Tambah">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">3.</td>
+                            <td>Edit</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__edit" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Edit">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">4.</td>
+                            <td>Edit Batch</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__edit_batch" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Edit Batch">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">5.</td>
+                            <td>Hapus</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__delete" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Hapus">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">6.</td>
+                            <td>Hapus Batch</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__delete_batch" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Hapus Batch">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">7.</td>
+                            <td>Lihat Tong Sampah</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__recycle_bin" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Lihat Tong Sampah">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">8.</td>
+                            <td>Pulihkan</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__restore" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Pulihkan">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">9.</td>
+                            <td>Pulihkan Batch</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__restore_batch" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Pulihkan Batch">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">10.</td>
+                            <td>Hancurkan</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__destroy" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Hancurkan">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;vertical-align:top" width="5%">11.</td>
+                            <td>Hancurkan Batch</td>
+                            <td style="text-align:center;vertical-align:top">
+                                <input type="checkbox" name="master_data_kategori_transaksi" id="master_data_kategori_transaksi__destroy_batch" data-checkbox="true" data-namamenu="Master Data - Kategori Transaksi - Hancurkan Batch">
+                            </td>
+                        </tr>
+                    </section>
                     <section id="pengaturan_user-sec">
                         <tr>
                             <td colspan="2" class="text-white bg-primary"><i><b>Pengaturan - User</b></i></td>

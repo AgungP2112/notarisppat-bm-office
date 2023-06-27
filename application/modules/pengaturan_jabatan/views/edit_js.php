@@ -47,6 +47,13 @@
                     $('input[name="master_data_rekening"]').prop('checked', false);
                 }
                 break;
+            case 'master_data_kategori_transaksi_all':
+                if ($(this).is(':checked')) {
+                    $('input[name="master_data_kategori_transaksi"]').prop('checked', true);
+                } else {
+                    $('input[name="master_data_kategori_transaksi"]').prop('checked', false);
+                }
+                break;
             case 'pengaturan_user_all':
                 if ($(this).is(':checked')) {
                     $('input[name="pengaturan_user"]').prop('checked', true);
