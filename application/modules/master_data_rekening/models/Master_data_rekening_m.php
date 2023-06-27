@@ -248,7 +248,7 @@ class Master_data_rekening_m extends CI_Model
 		$log = [];
 		// ----------------------------------------------------------------------
 		foreach ($this->input->post('id') as $row) {
-			$params['rekening_id']  = $row;
+			$params['rekening_id']    = $row;
 			$params['user_delete_id'] = user_id();
 			$params['deleted']        = date('Y-m-d H:i:s');
 			$dataDelete[] = $params;
