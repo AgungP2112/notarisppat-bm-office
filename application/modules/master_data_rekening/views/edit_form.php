@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="container-fluid" id="container-wrapper">
-    <?= form_header('<i class="fas fa-desktop"></i>', 'Master Data - Klien - Edit', true) ?>
+    <?= form_header('<i class="fas fa-desktop"></i>', 'Master Data - Rekening - Tambah', true) ?>
 
     <div class="card mb-4">
         <div class="card-header py-3 d-flex align-items-center justify-content-between bg-primary text-white">
@@ -12,6 +12,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" class="form-control form-control-sm" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="nomorrekening">Nomor Rekening</label>
+                <input type="text" id="nomorrekening" class="form-control form-control-sm">
             </div>
         </div>
         <div class="card-footer">

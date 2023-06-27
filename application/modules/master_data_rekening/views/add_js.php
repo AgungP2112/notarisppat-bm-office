@@ -15,11 +15,12 @@
                 $('#submit').blur();
 
                 $.ajax({
-                    url: '<?= base_url('master_data/klien/process/add') ?>',
+                    url: '<?= base_url('master_data/rekening/process/add') ?>',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        nama: $('#nama').val()
+                        nama: $('#nama').val(),
+                        nomor_rekening: $('#nomorrekening').val()
                     },
                     beforeSend: function() {
                         HoldOn.open({
@@ -45,7 +46,7 @@
                             });
                         }
                         if (data.success) {
-                            callPusher(['pushMasterDataKlien']);
+                            callPusher(['pushMasterDataRekening']);
                             Swal.fire({
                                 title: 'Konfirmasi',
                                 text: 'Data berhasil disimpan',

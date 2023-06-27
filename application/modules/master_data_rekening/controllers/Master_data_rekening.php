@@ -102,11 +102,9 @@ class Master_data_rekening extends MY_Controller
     function process_add()
     {
         $this->form_validation->set_rules("nama", "NAMA", "required", ["required" => "Nama rekening harus diisi"]);
-        $this->form_validation->set_rules("nomor_rekening", "NOMORREKENING", "required", ["required" => "Nomor rekening harus diisi"]);
         if ($this->form_validation->run() == false) {
             $result['error']              = true;
             $result['namaError']          = form_error("nama");
-            $result['nomorRekeningError'] = form_error("nomor_rekening");
         } else {
             $process = $this->master_data_rekening_m->add_form__process();
             if ($process == true) {

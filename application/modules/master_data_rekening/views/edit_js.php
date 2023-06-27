@@ -5,11 +5,11 @@
     // ----------------------------------------------------------------------
     function loadMainData() {
         $.ajax({
-            url: '<?= base_url('master_data/klien/load/data/edit') ?>',
+            url: '<?= base_url('master_data/rekening/load/data/edit') ?>',
             type: 'POST',
             dataType: 'json',
             data: {
-                klien_id: '<?= $this->uri->segment(4) ?>'
+                rekening_id: '<?= $this->uri->segment(4) ?>'
             },
             beforeSend: function() {
                 HoldOn.open({
@@ -22,6 +22,7 @@
             },
             success: function(data) {
                 $('#nama').val(data.nama);
+                $('#nomorrekening').val(data.nomor_rekening);
             }
         })
     };
@@ -42,12 +43,13 @@
                 $('#submit').blur();
 
                 $.ajax({
-                    url: '<?= base_url('master_data/klien/process/edit') ?>',
+                    url: '<?= base_url('master_data/rekening/process/edit') ?>',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        klien_id: '<?= $this->uri->segment(4) ?>',
-                        nama: $('#nama').val()
+                        rekening_id: '<?= $this->uri->segment(4) ?>',
+                        nama: $('#nama').val(),
+                        nomor_rekening: $('#nomorrekening').val()
                     },
                     beforeSend: function() {
                         HoldOn.open({
@@ -73,7 +75,7 @@
                             });
                         }
                         if (data.success) {
-                            callPusher(['pushMasterDataKlien']);
+                            callPusher(['pushMasterDataRekening']);
                             Swal.fire({
                                 title: 'Konfirmasi',
                                 text: 'Data berhasil disimpan',
