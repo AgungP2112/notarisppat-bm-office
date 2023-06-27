@@ -26,6 +26,13 @@
     // ----------------------------------------------------------------------
     $('input[name="allCheckbox"]').click(function() {
         switch ($(this).attr('id')) {
+            case 'master_data_penanggung_jawab_all':
+                if ($(this).is(':checked')) {
+                    $('input[name="master_data_penanggung_jawab"]').prop('checked', true);
+                } else {
+                    $('input[name="master_data_penanggung_jawab"]').prop('checked', false);
+                }
+                break;
             case 'pengaturan_user_all':
                 if ($(this).is(':checked')) {
                     $('input[name="pengaturan_user"]').prop('checked', true);
