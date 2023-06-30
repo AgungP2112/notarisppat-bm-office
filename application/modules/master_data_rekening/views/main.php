@@ -9,8 +9,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <h5 class="m-0 font-weight-bold">Master Data</h5>
             <?php if (
                 check_hak_akses('master_data_rekening__add') == 'true' ||
+                check_hak_akses('master_data_rekening__edit_batch') == 'true' ||
                 check_hak_akses('master_data_rekening__delete_batch') == 'true' ||
-                check_hak_akses('master_data_rekening__switch_active') == 'true' ||
                 check_hak_akses('master_data_rekening__recycle_bin') == 'true'
             ) { ?>
                 <div class="dropdown no-arrow">
