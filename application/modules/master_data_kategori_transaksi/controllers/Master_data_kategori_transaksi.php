@@ -165,8 +165,6 @@ class Master_data_kategori_transaksi extends MY_Controller
             add_log_open_menu('master_data_kategori_transaksi__delete');
             $process = $this->master_data_kategori_transaksi_m->delete_form__process();
             $result['success']      = $process;
-            if ($process == true) {
-            }
         } else {
             add_log_forbidden('master_data_kategori_transaksi__delete');
             $result['success']  = false;
@@ -185,8 +183,6 @@ class Master_data_kategori_transaksi extends MY_Controller
             add_log_open_menu('master_data_kategori_transaksi__delete_batch');
             $process = $this->master_data_kategori_transaksi_m->delete_batch_form__process();
             $result['success']      = $process;
-            if ($process == true) {
-            }
         } else {
             add_log_forbidden('master_data_kategori_transaksi__delete_batch');
             $result['success']  = false;
@@ -288,8 +284,6 @@ class Master_data_kategori_transaksi extends MY_Controller
             add_log_open_menu('master_data_kategori_transaksi__restore_batch');
             $process = $this->master_data_kategori_transaksi_m->restore_batch_form__process();
             $result['success']      = $process;
-            if ($process == true) {
-            }
         } else {
             add_log_forbidden('master_data_kategori_transaksi__restore_batch');
             $result['success']  = false;
@@ -308,8 +302,6 @@ class Master_data_kategori_transaksi extends MY_Controller
             add_log_open_menu('master_data_kategori_transaksi__destroy');
             $process = $this->master_data_kategori_transaksi_m->destroy_form__process();
             $result['success']      = $process;
-            if ($process == true) {
-            }
         } else {
             add_log_forbidden('master_data_kategori_transaksi__destroy');
             $result['success']  = false;
@@ -328,8 +320,6 @@ class Master_data_kategori_transaksi extends MY_Controller
             add_log_open_menu('master_data_kategori_transaksi__destroy_batch');
             $process = $this->master_data_kategori_transaksi_m->destroy_batch_form__process();
             $result['success']      = $process;
-            if ($process == true) {
-            }
         } else {
             add_log_forbidden('master_data_kategori_transaksi__destroy_batch');
             $result['success']  = false;

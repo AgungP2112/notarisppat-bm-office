@@ -156,32 +156,6 @@
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_kategori_transaksi__edit_batch') == 'true') { ?>
-    <script>
-        function editBatchForm() {
-            if (checkHakAkses('master_data_kategori_transaksi__edit_batch') == 'true') {
-                var checkBox = $('.masterCheckbox:checked');
-                var idList = '';
-                if (checkBox.length > 1) {
-                    $(checkBox).each(function() {
-                        idList += $(this).val() + ',';
-                    });
-                    window.open('<?= base_url('master_data/kategori_transaksi/edit_batch/') ?>' + idList.slice(0, idList.length - 1));
-                } else {
-                    Swal.fire({
-                        title: 'Konfirmasi',
-                        text: 'Pilih lebih dari 1 data',
-                        icon: 'error',
-                        allowOutsideClick: false
-                    });
-                }
-            } else {
-                alert(forbiddenAccess('master_data_kategori_transaksi__edit_batch'));
-            }
-        };
-    </script>
-<?php } ?>
-
 <?php if (check_hak_akses('master_data_kategori_transaksi__delete') == 'true') { ?>
     <script>
         function deleteForm(id) {

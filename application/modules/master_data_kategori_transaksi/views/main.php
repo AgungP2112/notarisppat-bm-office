@@ -10,7 +10,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <?php if (
                 check_hak_akses('master_data_kategori_transaksi__add') == 'true' ||
                 check_hak_akses('master_data_kategori_transaksi__delete_batch') == 'true' ||
-                check_hak_akses('master_data_kategori_transaksi__switch_active') == 'true' ||
                 check_hak_akses('master_data_kategori_transaksi__recycle_bin') == 'true'
             ) { ?>
                 <div class="dropdown no-arrow">
