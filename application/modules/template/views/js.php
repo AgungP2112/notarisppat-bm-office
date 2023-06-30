@@ -208,6 +208,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
     }
 } ?>
 
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'kategori_transaksi' && $this->uri->segment(3) == '') {
+    if (check_hak_akses('master_data_kategori_transaksi__data') == 'true') {
+        $this->load->view('master_data_kategori_transaksi/main_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'kategori_transaksi' && $this->uri->segment(3) == 'add') {
+    if (check_hak_akses('master_data_kategori_transaksi__add') == 'true') {
+        $this->load->view('master_data_kategori_transaksi/add_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'kategori_transaksi' && $this->uri->segment(3) == 'edit') {
+    if (check_hak_akses('master_data_kategori_transaksi__edit') == 'true') {
+        $this->load->view('master_data_kategori_transaksi/edit_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'kategori_transaksi' && $this->uri->segment(3) == 'edit_batch') {
+    if (check_hak_akses('master_data_kategori_transaksi__edit_batch') == 'true') {
+        $this->load->view('master_data_kategori_transaksi/edit_batch_js');
+    }
+} ?>
+<?php if ($this->uri->segment(1) == 'master_data' && $this->uri->segment(2) == 'kategori_transaksi' && $this->uri->segment(3) == 'recycle_bin') {
+    if (check_hak_akses('master_data_kategori_transaksi__recycle_bin') == 'true') {
+        $this->load->view('master_data_kategori_transaksi/recycle_bin_js');
+    }
+} ?>
+
 <?php if ($this->uri->segment(1) == 'pengaturan' && $this->uri->segment(2) == 'user' && $this->uri->segment(3) == '') {
     if (check_hak_akses('pengaturan_user__data') == 'true') {
         $this->load->view('pengaturan_user/main_js');

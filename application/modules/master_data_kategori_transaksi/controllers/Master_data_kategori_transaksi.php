@@ -57,10 +57,10 @@ class Master_data_kategori_transaksi extends MY_Controller
             }
 
             if ($commandEdit == '' && $commandHapus == '') {
-                $subResult['command'] = '<button type="button" class="btn bg-dark btn-xs disabled"><i class="fas fa-ban"></i></button>';
+                $subResult['command'] = '<button type="button" class="btn bg-dark btn-sm disabled"><i class="fas fa-ban"></i></button>';
             } else {
                 $subResult['command'] = '<div class="btn-group">
-                                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-window-restore"></i> Action
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -226,10 +226,10 @@ class Master_data_kategori_transaksi extends MY_Controller
             }
 
             if ($commandRestore == '' && $commandDestroy == '') {
-                $subResult['command'] = '<button type="button" class="btn btn-dark btn-xs disabled"><i class="fas fa-ban"></i></button>';
+                $subResult['command'] = '<button type="button" class="btn btn-dark btn-sm disabled"><i class="fas fa-ban"></i></button>';
             } else {
                 $subResult['command'] = '<div class="btn-group">
-                                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-window-restore"></i> Action
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

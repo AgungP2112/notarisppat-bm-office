@@ -38,14 +38,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tableMaster" class="table table-bordered table-striped table-hover table-sm mx-auto" style="width:660px">
+                <table id="tableMaster" class="table table-bordered table-striped table-hover table-sm mx-auto" style="width:610px">
                     <thead class="bg-primary text-white">
                         <tr>
                             <th style="text-align:center;vertical-align:middle;width:80px"></th>
                             <th style="text-align:center;vertical-align:middle;width:30px"><?= checkbox_all_search_bar() ?></th>
                             <th style="text-align:center;vertical-align:middle;width:50px">No.</th>
-                            <th style="text-align:center;vertical-align:middle;width:200px">Nama</th>
-                            <th style="text-align:center;vertical-align:middle;width:300px">Tampilkan Dalam Rekap</th>
+                            <th style="text-align:center;vertical-align:middle;width:300px">Nama</th>
+                            <th style="text-align:center;vertical-align:middle;width:150px">Tampilkan Dalam Rekap</th>
                         </tr>
                     </thead>
                     <tfoot class="table-search-bar">

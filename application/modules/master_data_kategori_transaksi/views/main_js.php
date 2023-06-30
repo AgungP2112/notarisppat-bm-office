@@ -1,4 +1,4 @@
-<?php if (check_hak_akses('master_data_rekening__data') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__data') == 'true') { ?>
     <script>
         $(document).ready(function() {
             loadTableMaster();
@@ -14,7 +14,7 @@
             cluster: 'ap1'
         });
         var channel = pusher.subscribe('my-channel');
-        channel.bind('pushMasterDataRekening', function(data) {
+        channel.bind('pushMasterDataKategoriTransaksi', function(data) {
             $('#tableMaster').DataTable().ajax.reload(null, false);
         });
 
@@ -63,7 +63,7 @@
                 serverSide: true,
                 order: [],
                 ajax: {
-                    url: '<?= base_url('master_data/rekening/load/table/main') ?>',
+                    url: '<?= base_url('master_data/kategori_transaksi/load/table/main') ?>',
                     type: "POST"
                 },
                 keys: true,
@@ -87,7 +87,9 @@
                         data: "nama"
                     },
                     {
-                        data: "nomor_rekening"
+                        data: "tampilkan_dalam_rekap",
+                        orderable: false,
+                        className: "text-center"
                     }
                 ],
                 lengthMenu: [
@@ -130,41 +132,41 @@
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__add') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__add') == 'true') { ?>
     <script>
         function addForm() {
-            if (checkHakAkses('master_data_rekening__add') == 'true') {
-                window.open('<?= base_url('master_data/rekening/add') ?>');
+            if (checkHakAkses('master_data_kategori_transaksi__add') == 'true') {
+                window.open('<?= base_url('master_data/kategori_transaksi/add') ?>');
             } else {
-                alert(forbiddenAccess('master_data_rekening__add'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__add'));
             }
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__edit') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__edit') == 'true') { ?>
     <script>
         function editForm(id) {
-            if (checkHakAkses('master_data_rekening__edit') == 'true') {
-                window.open('<?= base_url('master_data/rekening/edit/') ?>' + id);
+            if (checkHakAkses('master_data_kategori_transaksi__edit') == 'true') {
+                window.open('<?= base_url('master_data/kategori_transaksi/edit/') ?>' + id);
             } else {
-                alert(forbiddenAccess('master_data_rekening__edit'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__edit'));
             }
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__edit_batch') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__edit_batch') == 'true') { ?>
     <script>
         function editBatchForm() {
-            if (checkHakAkses('master_data_rekening__edit_batch') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__edit_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 var idList = '';
                 if (checkBox.length > 1) {
                     $(checkBox).each(function() {
                         idList += $(this).val() + ',';
                     });
-                    window.open('<?= base_url('master_data/rekening/edit_batch/') ?>' + idList.slice(0, idList.length - 1));
+                    window.open('<?= base_url('master_data/kategori_transaksi/edit_batch/') ?>' + idList.slice(0, idList.length - 1));
                 } else {
                     Swal.fire({
                         title: 'Konfirmasi',
@@ -174,16 +176,16 @@
                     });
                 }
             } else {
-                alert(forbiddenAccess('master_data_rekening__edit_batch'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__edit_batch'));
             }
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__delete') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__delete') == 'true') { ?>
     <script>
         function deleteForm(id) {
-            if (checkHakAkses('master_data_rekening__delete') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__delete') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dihapus',
@@ -198,10 +200,10 @@
                     if (result.value) {
                         $.ajax({
                             type: "POST",
-                            url: '<?= base_url('master_data/rekening/process/delete') ?>',
+                            url: '<?= base_url('master_data/kategori_transaksi/process/delete') ?>',
                             dataType: 'json',
                             data: {
-                                rekening_id: id
+                                kategori_transaksi_id: id
                             },
                             beforeSend: function() {
                                 HoldOn.open({
@@ -214,7 +216,7 @@
                             },
                             success: function(data) {
                                 if (data.success) {
-                                    callPusher(['pushMasterDataRekening']);
+                                    callPusher(['pushMasterDataKategoriTransaksi']);
                                     Swal.fire({
                                         title: 'Konfirmasi',
                                         text: 'Data berhasil dihapus',
@@ -231,16 +233,16 @@
                     };
                 });
             } else {
-                alert(forbiddenAccess('master_data_rekening__delete'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__delete'));
             };
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__delete_batch') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__delete_batch') == 'true') { ?>
     <script>
         function processDeleteBatch() {
-            if (checkHakAkses('master_data_rekening__delete_batch') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__delete_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -261,7 +263,7 @@
                         if (result.value) {
                             $.ajax({
                                 type: "POST",
-                                url: '<?= base_url('master_data/rekening/process/delete_batch') ?>',
+                                url: '<?= base_url('master_data/kategori_transaksi/process/delete_batch') ?>',
                                 dataType: 'json',
                                 data: {
                                     id: dataList
@@ -277,7 +279,7 @@
                                 },
                                 success: function(data) {
                                     if (data.success) {
-                                        callPusher(['pushMasterDataRekening']);
+                                        callPusher(['pushMasterDataKategoriTransaksi']);
                                         Swal.fire({
                                             title: 'Konfirmasi',
                                             text: 'Data berhasil dihapus',
@@ -302,19 +304,19 @@
                     });
                 }
             } else {
-                alert(forbiddenAccess('master_data_rekening__delete_batch'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__delete_batch'));
             }
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__recycle_bin') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__recycle_bin') == 'true') { ?>
     <script>
         function binForm() {
-            if (checkHakAkses('master_data_rekening__recycle_bin') == 'true') {
-                window.open('<?= base_url('master_data/rekening/recycle_bin') ?>');
+            if (checkHakAkses('master_data_kategori_transaksi__recycle_bin') == 'true') {
+                window.open('<?= base_url('master_data/kategori_transaksi/recycle_bin') ?>');
             } else {
-                alert(forbiddenAccess('master_data_rekening__recycle_bin'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__recycle_bin'));
             }
         };
     </script>
