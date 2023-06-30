@@ -5,11 +5,11 @@
     // ----------------------------------------------------------------------
     function loadMainData() {
         $.ajax({
-            url: '<?= base_url('master_data/rekening/load/data/edit') ?>',
+            url: '<?= base_url('master_data/kategori_transaksi/load/data/edit') ?>',
             type: 'POST',
             dataType: 'json',
             data: {
-                rekening_id: '<?= $this->uri->segment(4) ?>'
+                kategori_transaksi_id: '<?= $this->uri->segment(4) ?>'
             },
             beforeSend: function() {
                 HoldOn.open({
@@ -22,7 +22,9 @@
             },
             success: function(data) {
                 $('#nama').val(data.nama);
-                $('#nomorrekening').val(data.nomor_rekening);
+                if (data.tampilkan_dalam_rekap == 'true') {
+                    $('#tampilkanDalamRekap').prop('checked', true);
+                }
             }
         })
     };
@@ -43,13 +45,13 @@
                 $('#submit').blur();
 
                 $.ajax({
-                    url: '<?= base_url('master_data/rekening/process/edit') ?>',
+                    url: '<?= base_url('master_data/kategori_transaksi/process/edit') ?>',
                     type: "POST",
                     dataType: "json",
                     data: {
-                        rekening_id: '<?= $this->uri->segment(4) ?>',
+                        kategori_transaksi_id: '<?= $this->uri->segment(4) ?>',
                         nama: $('#nama').val(),
-                        nomor_rekening: $('#nomorrekening').val()
+                        tampilkan_dalam_rekap: $('#tampilkanDalamRekap').is(':checked')
                     },
                     beforeSend: function() {
                         HoldOn.open({
@@ -75,7 +77,7 @@
                             });
                         }
                         if (data.success) {
-                            callPusher(['pushMasterDataRekening']);
+                            callPusher(['pushMasterDataKategoriTransaksi']);
                             Swal.fire({
                                 title: 'Konfirmasi',
                                 text: 'Data berhasil disimpan',
