@@ -1,4 +1,4 @@
-<?php if (check_hak_akses('master_data_rekening__recycle_bin') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__recycle_bin') == 'true') { ?>
     <script>
         $(document).ready(function() {
             loadTableMaster();
@@ -8,7 +8,7 @@
             cluster: 'ap1'
         });
         var channel = pusher.subscribe('my-channel');
-        channel.bind('pushMasterDataRekening', function(data) {
+        channel.bind('pushMasterDataKategoriTransaksi', function(data) {
             $('#tableMaster').DataTable().ajax.reload(null, false);
         });
 
@@ -57,7 +57,7 @@
                 serverSide: true,
                 order: [],
                 ajax: {
-                    url: '<?= base_url('master_data/rekening/load/table/recycle_bin') ?>',
+                    url: '<?= base_url('master_data/kategori_transaksi/load/table/recycle_bin') ?>',
                     type: "POST"
                 },
                 keys: true,
@@ -81,7 +81,9 @@
                         data: "nama"
                     },
                     {
-                        data: "nomor_rekening"
+                        data: "tampilkan_dalam_rekap",
+                        orderable: false,
+                        className: "text-center"
                     }
                 ],
                 lengthMenu: [
@@ -124,10 +126,10 @@
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__restore') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__restore') == 'true') { ?>
     <script>
         function restoreForm(id) {
-            if (checkHakAkses('master_data_rekening__restore') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__restore') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dipulihkan',
@@ -142,10 +144,10 @@
                     if (result.value) {
                         $.ajax({
                             type: "POST",
-                            url: '<?= base_url('master_data/rekening/process/restore') ?>',
+                            url: '<?= base_url('master_data/kategori_transaksi/process/restore') ?>',
                             dataType: 'json',
                             data: {
-                                rekening_id: id
+                                kategori_transaksi_id: id
                             },
                             beforeSend: function() {
                                 HoldOn.open({
@@ -158,7 +160,7 @@
                             },
                             success: function(data) {
                                 if (data.success) {
-                                    callPusher(['pushMasterDataRekening']);
+                                    callPusher(['pushMasterDataKategoriTransaksi']);
                                     Swal.fire({
                                         title: 'Konfirmasi',
                                         text: 'Data berhasil dipulihkan',
@@ -175,16 +177,16 @@
                     };
                 });
             } else {
-                alert(forbiddenAccess('master_data_rekening__restore'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__restore'));
             }
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__restore_batch') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__restore_batch') == 'true') { ?>
     <script>
         function processRestoreBatch() {
-            if (checkHakAkses('master_data_rekening__restore_batch') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__restore_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -205,7 +207,7 @@
                         if (result.value) {
                             $.ajax({
                                 type: "POST",
-                                url: '<?= base_url('master_data/rekening/process/restore_batch') ?>',
+                                url: '<?= base_url('master_data/kategori_transaksi/process/restore_batch') ?>',
                                 dataType: 'json',
                                 data: {
                                     id: dataList
@@ -221,7 +223,7 @@
                                 },
                                 success: function(data) {
                                     if (data.success) {
-                                        callPusher(['pushMasterDataRekening']);
+                                        callPusher(['pushMasterDataKategoriTransaksi']);
                                         Swal.fire({
                                             title: 'Konfirmasi',
                                             text: 'Data berhasil dipulihkan',
@@ -246,16 +248,16 @@
                     });
                 }
             } else {
-                alert(forbiddenAccess('master_data_rekening__restore_batch'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__restore_batch'));
             }
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__destroy') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__destroy') == 'true') { ?>
     <script>
         function destroyForm(id) {
-            if (checkHakAkses('master_data_rekening__destroy') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__destroy') == 'true') {
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: '1 data akan dihancurkan',
@@ -270,10 +272,10 @@
                     if (result.value) {
                         $.ajax({
                             type: "POST",
-                            url: '<?= base_url('master_data/rekening/process/destroy') ?>',
+                            url: '<?= base_url('master_data/kategori_transaksi/process/destroy') ?>',
                             dataType: 'json',
                             data: {
-                                rekening_id: id
+                                kategori_transaksi_id: id
                             },
                             beforeSend: function() {
                                 HoldOn.open({
@@ -286,7 +288,7 @@
                             },
                             success: function(data) {
                                 if (data.success) {
-                                    callPusher(['pushMasterDataRekening']);
+                                    callPusher(['pushMasterDataKategoriTransaksi']);
                                     Swal.fire({
                                         title: 'Konfirmasi',
                                         text: 'Data berhasil dihancurkan',
@@ -303,16 +305,16 @@
                     };
                 });
             } else {
-                alert(forbiddenAccess('master_data_rekening__destroy'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__destroy'));
             };
         };
     </script>
 <?php } ?>
 
-<?php if (check_hak_akses('master_data_rekening__destroy_batch') == 'true') { ?>
+<?php if (check_hak_akses('master_data_kategori_transaksi__destroy_batch') == 'true') { ?>
     <script>
         function processDestroyBatch() {
-            if (checkHakAkses('master_data_rekening__destroy_batch') == 'true') {
+            if (checkHakAkses('master_data_kategori_transaksi__destroy_batch') == 'true') {
                 var checkBox = $('.masterCheckbox:checked');
                 if (checkBox.length > 1) {
                     var dataList = [];
@@ -333,7 +335,7 @@
                         if (result.value) {
                             $.ajax({
                                 type: "POST",
-                                url: '<?= base_url('master_data/rekening/process/destroy_batch') ?>',
+                                url: '<?= base_url('master_data/kategori_transaksi/process/destroy_batch') ?>',
                                 dataType: 'json',
                                 data: {
                                     id: dataList
@@ -349,7 +351,7 @@
                                 },
                                 success: function(data) {
                                     if (data.success) {
-                                        callPusher(['pushMasterDataRekening']);
+                                        callPusher(['pushMasterDataKategoriTransaksi']);
                                         Swal.fire({
                                             title: 'Konfirmasi',
                                             text: 'Data berhasil dihancurkan',
@@ -374,7 +376,7 @@
                     });
                 }
             } else {
-                alert(forbiddenAccess('master_data_rekening__destroy_batch'));
+                alert(forbiddenAccess('master_data_kategori_transaksi__destroy_batch'));
             }
         };
     </script>

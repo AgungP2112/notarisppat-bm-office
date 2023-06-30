@@ -213,8 +213,7 @@ class Master_data_kategori_transaksi_m extends CI_Model
 		$orderColumn  = [null, null, null, "nama"];
 		$searchColumn = [null, null, null, "nama"];
 		$order        = ["kategori_transaksi_id" => "desc"];
-
-		$row = 0;
+		$row          = 0;
 
 		$this->db->from('master_kategori_transaksi');
 		$this->db->where('deleted !=', null);
