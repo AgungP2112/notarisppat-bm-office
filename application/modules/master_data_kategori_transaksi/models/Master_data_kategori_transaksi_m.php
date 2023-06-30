@@ -10,16 +10,15 @@ class Master_data_kategori_transaksi_m extends CI_Model
 		$orderColumn  = [null, null, null, "nama", "tampilkan_dalam_rekap"];
 		$searchColumn = [null, null, null, "nama", "tampilkan_dalam_rekap"];
 		$order        = ["kategori_transaksi_id" => "desc"];
-
-		$a = 0;
+		$row          = 0;
 
 		$this->db->from('master_kategori_transaksi');
 		$this->db->where('deleted', null);
 		foreach ($searchColumn as $item) {
-			if ($item != null && $_POST['columns'][$a]['search']['value']) {
-				$this->db->like($item, $_POST['columns'][$a]['search']['value']);
+			if ($item != null && $_POST['columns'][$row]['search']['value']) {
+				$this->db->like($item, $_POST['columns'][$row]['search']['value']);
 			}
-			$a++;
+			$row++;
 		}
 		if (isset($_POST["order"])) {
 			$this->db->order_by($orderColumn[$_POST["order"]["0"]["column"]], $_POST["order"]["0"]["dir"]);
@@ -215,15 +214,15 @@ class Master_data_kategori_transaksi_m extends CI_Model
 		$searchColumn = [null, null, null, "nama"];
 		$order        = ["kategori_transaksi_id" => "desc"];
 
-		$a = 0;
+		$row = 0;
 
 		$this->db->from('master_kategori_transaksi');
 		$this->db->where('deleted !=', null);
 		foreach ($searchColumn as $item) {
-			if ($item != null && $_POST['columns'][$a]['search']['value']) {
-				$this->db->like($item, $_POST['columns'][$a]['search']['value']);
+			if ($item != null && $_POST['columns'][$row]['search']['value']) {
+				$this->db->like($item, $_POST['columns'][$row]['search']['value']);
 			}
-			$a++;
+			$row++;
 		}
 		if (isset($_POST["order"])) {
 			$this->db->order_by($orderColumn[$_POST["order"]["0"]["column"]], $_POST["order"]["0"]["dir"]);

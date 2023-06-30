@@ -22,9 +22,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <?php if (check_hak_akses('master_data_kategori_transaksi__add') == 'true') { ?>
                             <?= form_menu_item('addForm()', '<i class="fas fa-circle-plus"></i>', 'Tambah'); ?>
                         <?php } ?>
-                        <?php if (check_hak_akses('master_data_kategori_transaksi__edit_batch') == 'true') { ?>
-                            <?= form_menu_item('editBatchForm()', '<i class="fas fa-edit"></i>', 'Edit Batch'); ?>
-                        <?php } ?>
                         <?php if (check_hak_akses('master_data_kategori_transaksi__delete_batch') == 'true') { ?>
                             <?= form_menu_item('processDeleteBatch()', '<i class="fas fa-trash-can"></i>', 'Hapus Batch'); ?>
                         <?php } ?>
