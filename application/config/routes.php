@@ -131,6 +131,26 @@ $route['master_data/rekening/process/restore']        = 'master_data_rekening/pr
 $route['master_data/rekening/process/restore_batch']  = 'master_data_rekening/process_restore_batch';
 $route['master_data/rekening/process/destroy']        = 'master_data_rekening/process_destroy';
 $route['master_data/rekening/process/destroy_batch']  = 'master_data_rekening/process_destroy_batch';
+
+// Master Data - Kategori Transaksi
+$route['master_data/kategori_transaksi']                        = 'master_data_kategori_transaksi';
+$route['master_data/kategori_transaksi/load/table/main']        = 'master_data_kategori_transaksi/load_table_main';
+$route['master_data/kategori_transaksi/add']                    = 'master_data_kategori_transaksi/add_form';
+$route['master_data/kategori_transaksi/process/add']            = 'master_data_kategori_transaksi/process_add';
+$route['master_data/kategori_transaksi/edit/(:num)']            = 'master_data_kategori_transaksi/edit_form';
+$route['master_data/kategori_transaksi/load/data/edit']         = 'master_data_kategori_transaksi/load_data_edit';
+$route['master_data/kategori_transaksi/process/edit']           = 'master_data_kategori_transaksi/process_edit';
+$route['master_data/kategori_transaksi/edit_batch/(:any)']      = 'master_data_kategori_transaksi/edit_batch_form';
+$route['master_data/kategori_transaksi/load/data/edit_batch']   = 'master_data_kategori_transaksi/load_data_edit_batch';
+$route['master_data/kategori_transaksi/process/edit_batch']     = 'master_data_kategori_transaksi/process_edit_batch';
+$route['master_data/kategori_transaksi/process/delete']         = 'master_data_kategori_transaksi/process_delete';
+$route['master_data/kategori_transaksi/process/delete_batch']   = 'master_data_kategori_transaksi/process_delete_batch';
+$route['master_data/kategori_transaksi/recycle_bin']            = 'master_data_kategori_transaksi/recycle_bin_form';
+$route['master_data/kategori_transaksi/load/table/recycle_bin'] = 'master_data_kategori_transaksi/load_table_recycle_bin';
+$route['master_data/kategori_transaksi/process/restore']        = 'master_data_kategori_transaksi/process_restore';
+$route['master_data/kategori_transaksi/process/restore_batch']  = 'master_data_kategori_transaksi/process_restore_batch';
+$route['master_data/kategori_transaksi/process/destroy']        = 'master_data_kategori_transaksi/process_destroy';
+$route['master_data/kategori_transaksi/process/destroy_batch']  = 'master_data_kategori_transaksi/process_destroy_batch';
 // --------------------------------------------------------------------
 // PENGATURAN
 // --------------------------------------------------------------------

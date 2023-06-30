@@ -2,16 +2,16 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="container-fluid" id="container-wrapper">
-    <?= form_header('<i class="fas fa-desktop"></i>', 'Master Data - Rekening') ?>
+    <?= form_header('<i class="fas fa-desktop"></i>', 'Master Data - Kategori Transaksi') ?>
 
     <div class="card mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary text-white">
             <h5 class="m-0 font-weight-bold">Master Data</h5>
             <?php if (
-                check_hak_akses('master_data_rekening__add') == 'true' ||
-                check_hak_akses('master_data_rekening__delete_batch') == 'true' ||
-                check_hak_akses('master_data_rekening__switch_active') == 'true' ||
-                check_hak_akses('master_data_rekening__recycle_bin') == 'true'
+                check_hak_akses('master_data_kategori_transaksi__add') == 'true' ||
+                check_hak_akses('master_data_kategori_transaksi__delete_batch') == 'true' ||
+                check_hak_akses('master_data_kategori_transaksi__switch_active') == 'true' ||
+                check_hak_akses('master_data_kategori_transaksi__recycle_bin') == 'true'
             ) { ?>
                 <div class="dropdown no-arrow">
                     <a class="dropdown-toggle btn btn-info btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -19,16 +19,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(17px, 19px, 0px);">
                         <div class="dropdown-header">MENU</div>
-                        <?php if (check_hak_akses('master_data_rekening__add') == 'true') { ?>
+                        <?php if (check_hak_akses('master_data_kategori_transaksi__add') == 'true') { ?>
                             <?= form_menu_item('addForm()', '<i class="fas fa-circle-plus"></i>', 'Tambah'); ?>
                         <?php } ?>
-                        <?php if (check_hak_akses('master_data_rekening__edit_batch') == 'true') { ?>
+                        <?php if (check_hak_akses('master_data_kategori_transaksi__edit_batch') == 'true') { ?>
                             <?= form_menu_item('editBatchForm()', '<i class="fas fa-edit"></i>', 'Edit Batch'); ?>
                         <?php } ?>
-                        <?php if (check_hak_akses('master_data_rekening__delete_batch') == 'true') { ?>
+                        <?php if (check_hak_akses('master_data_kategori_transaksi__delete_batch') == 'true') { ?>
                             <?= form_menu_item('processDeleteBatch()', '<i class="fas fa-trash-can"></i>', 'Hapus Batch'); ?>
                         <?php } ?>
-                        <?php if (check_hak_akses('master_data_rekening__recycle_bin') == 'true') { ?>
+                        <?php if (check_hak_akses('master_data_kategori_transaksi__recycle_bin') == 'true') { ?>
                             <div class="dropdown-divider"></div>
                             <?= form_menu_item('binForm()', '<i class="fas fa-dumpster"></i>', 'Lihat Tong Sampah'); ?>
                         <?php } ?>
@@ -45,7 +45,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <th style="text-align:center;vertical-align:middle;width:30px"><?= checkbox_all_search_bar() ?></th>
                             <th style="text-align:center;vertical-align:middle;width:50px">No.</th>
                             <th style="text-align:center;vertical-align:middle;width:200px">Nama</th>
-                            <th style="text-align:center;vertical-align:middle;width:300px">Nomor Rekening</th>
+                            <th style="text-align:center;vertical-align:middle;width:300px">Tampilkan Dalam Rekap</th>
                         </tr>
                     </thead>
                     <tfoot class="table-search-bar">
@@ -54,7 +54,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <th style="text-align:center;vertical-align:middle"></th>
                             <th style="text-align:center;vertical-align:middle"></th>
                             <th style="text-align:center;vertical-align:middle"><?= text_search_bar('Nama') ?></th>
-                            <th style="text-align:center;vertical-align:middle"><?= text_search_bar('Nomor Rekening') ?></th>
+                            <th style="text-align:center;vertical-align:middle"></th>
                         </tr>
                     </tfoot>
                     <tbody></tbody>
